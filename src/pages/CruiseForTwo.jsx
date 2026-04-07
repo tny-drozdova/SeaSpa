@@ -6,10 +6,10 @@ import FareHarborBookingCTA from "../components/FareHarborBookingCTA";
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const IMAGES = {
-  hero: "/__generating__/img_8d5cc998b25b.png",
-  detail: "/__generating__/img_3dd7e1bf4127.png",
-  scenic: "/__generating__/img_c317aa12644b.png",
-  proposal: "/__generating__/img_b5655bcc3d21.png",
+  hero: "https://media.base44.com/images/public/69d4989a834518931660bae7/5a20b1156_generated_24563928.png",
+  detail: "https://media.base44.com/images/public/69d4989a834518931660bae7/0a2454857_generated_ad721f0f.png",
+  scenic: "https://media.base44.com/images/public/69d4989a834518931660bae7/f89be12d8_generated_8fde6b8e.png",
+  proposal: "https://media.base44.com/images/public/69d4989a834518931660bae7/65099efb5_generated_98fa840b.png",
 };
 
 const highlights = [

@@ -10,10 +10,10 @@ import MapEmbed from '../components/home/MapEmbed';
 import ContactForm from '../components/home/ContactForm';
 
 const IMAGES = {
-  hero: "/__generating__/img_5af813920cd6.png",
-  ultimate: "/__generating__/img_c9c202ae0eb7.png",
-  romantic: "/__generating__/img_8d5cc998b25b.png",
-  group: "/__generating__/img_0b43bcbe6032.png",
+  hero: "https://media.base44.com/images/public/69d4989a834518931660bae7/39b613c97_generated_cf7a412f.png",
+  ultimate: "https://media.base44.com/images/public/69d4989a834518931660bae7/17e44d6e5_generated_cdb1e5b8.png",
+  romantic: "https://media.base44.com/images/public/69d4989a834518931660bae7/5a20b1156_generated_24563928.png",
+  group: "https://media.base44.com/images/public/69d4989a834518931660bae7/58e1634bf_generated_4d1c9db8.png",
 };
 
 export default function Home() {
