@@ -1,0 +1,46 @@
+import { Button } from "@/components/ui/button";
+
+const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+
+export default function FareHarborBookingCTA({
+  headline = "Ready to Set Sail?",
+  subtext = "Book your private hot tub boat experience today.",
+  buttonText = "Book Your Escape",
+  variant = "dark",
+}) {
+  const isDark = variant === "dark";
+
+  return (
+    <section
+      className={`py-24 md:py-32 ${isDark ? 'bg-deep-atlantic' : 'bg-sea-salt'}`}
+      aria-labelledby="booking-cta-heading"
+    >
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          id="booking-cta-heading"
+          className={`font-heading text-3xl md:text-5xl font-light tracking-wide mb-6 ${
+            isDark ? 'text-sea-salt' : 'text-deep-atlantic'
+          }`}
+        >
+          {headline}
+        </h2>
+        <p className={`font-body text-lg mb-10 ${isDark ? 'text-mist-grey' : 'text-mist-grey'}`}>
+          {subtext}
+        </p>
+        <a
+          href={FAREHARBOR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book your cruise via FareHarbor"
+        >
+          <Button
+            size="lg"
+            className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 focus-ring animate-ripple transition-all duration-200"
+          >
+            {buttonText}
+          </Button>
+        </a>
+      </div>
+    </section>
+  );
+}
