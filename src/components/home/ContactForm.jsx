@@ -71,11 +71,13 @@ export default function ContactForm() {
             </div>
             <div>
               <Label htmlFor="contact-phone" className="font-body text-sea-salt text-sm mb-2 block">
-                Phone
+                Phone <span className="text-sky-horizon" aria-label="required">*</span>
               </Label>
               <Input
                 id="contact-phone"
                 type="tel"
+                required
+                aria-required="true"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="bg-muted/50 border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring"

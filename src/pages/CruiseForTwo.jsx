@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Heart, Sunset, Wine, Sparkles } from "lucide-react";
 import GiveThemAMoment from "../components/cruise/GiveThemAMoment";
 import YourStoryBeginsHere from "../components/cruise/YourStoryBeginsHere";
+import RomanticSEOFeatures from "../components/cruise/RomanticSEOFeatures";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
@@ -80,6 +81,9 @@ export default function CruiseForTwo() {
           </motion.div>
         </div>
       </section>
+
+      {/* Romantic SEO Features — below hero */}
+      <RomanticSEOFeatures />
 
       {/* Experience Highlights */}
       <section className="py-24 md:py-40 bg-sea-salt" aria-labelledby="highlights-heading">

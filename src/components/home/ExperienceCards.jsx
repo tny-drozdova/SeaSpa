@@ -69,7 +69,8 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
             description="Family-friendly things to do that is fun, unique, and guaranteed to be one of the highlights of the summer."
             linkTo="/cruise-for-two"
             linkLabel="Explore the hot tub boat experience in Stone Harbor"
-            linkText="Explore the Experience"
+            linkText="Unique Experience in NJ"
+            linkTo="/stone-harbor-bay-experience"
             altText="Couple enjoying a romantic hot tub boat cruise on New Jersey Bay at sunset"
           />
           <ExperienceCard

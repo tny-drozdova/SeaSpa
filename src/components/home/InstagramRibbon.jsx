@@ -15,37 +15,37 @@ const InstagramIcon = () => (
 export default function InstagramRibbon() {
   return (
     <section
-      className="bg-deep-atlantic border-t border-b border-sea-salt/10 py-5"
+      className="bg-deep-atlantic border-t border-b border-border py-5"
       aria-label="Follow us on Instagram"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center gap-6">
-          {/* Left label */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Left: label */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <InstagramIcon />
             <div>
-              <p className="font-body font-semibold text-sea-salt text-sm leading-tight">Tag us on Instagram</p>
-              <p className="font-body text-mist-grey text-xs">Share your Bay moments</p>
+              <p className="font-body font-semibold text-foreground text-sm leading-tight">Tag us on Instagram</p>
+              <p className="font-body text-muted-foreground text-xs">Share your Bay moments</p>
             </div>
           </div>
 
           {/* Divider */}
-          <div className="hidden sm:block w-px h-8 bg-sea-salt/20 flex-shrink-0" aria-hidden="true" />
+          <div className="hidden sm:block w-px h-8 bg-border flex-shrink-0" aria-hidden="true" />
 
-          {/* Hashtag pills */}
-          <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+          {/* Right: Hashtag pills */}
+          <div className="flex flex-wrap gap-2 justify-end">
             {hashtags.map(({ tag, url, featured }) => (
               <a
                 key={tag}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`font-body text-sm px-4 py-2 rounded-full border transition-all duration-200 focus-ring hover:scale-105 ${
+                className={`font-body text-sm px-4 py-2 rounded-full border transition-all duration-200 focus-ring ${
                   featured
-                    ? 'bg-amber-300/20 border-amber-300/60 text-amber-300 hover:bg-amber-300/30'
-                    : 'bg-transparent border-sea-salt/30 text-sea-salt/80 hover:border-sky-horizon hover:text-sky-horizon'
+                    ? 'bg-sky-horizon/20 border-sky-horizon text-sky-horizon hover:bg-sky-horizon hover:text-primary-foreground font-semibold'
+                    : 'bg-transparent border-border text-muted-foreground hover:border-sky-horizon hover:text-sky-horizon hover:bg-sky-horizon/10'
                 }`}
-                aria-label={`View ${tag} on Instagram`}
+                aria-label={`View ${tag} on Instagram (opens in new tab)`}
               >
                 {tag}
               </a>

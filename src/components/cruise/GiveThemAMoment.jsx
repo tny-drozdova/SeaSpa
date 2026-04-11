@@ -6,16 +6,13 @@ const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 export default function GiveThemAMoment() {
   return (
     <section
-      className="relative py-32 md:py-40 overflow-hidden"
+      className="relative py-32 md:py-40 bg-deep-atlantic overflow-hidden glass-rule"
       aria-labelledby="give-moment-heading"
-      style={{
-        background: 'linear-gradient(135deg, #3d0c11 0%, #0F172A 50%, #0e2240 100%)',
-      }}
     >
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heart icon */}
-        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-8" aria-hidden="true">
-          <Heart className="w-5 h-5 text-amber-400 fill-amber-400" />
+        <div className="w-12 h-12 rounded-full bg-sky-horizon/10 border border-sky-horizon/20 flex items-center justify-center mx-auto mb-8" aria-hidden="true">
+          <Heart className="w-5 h-5 text-sky-horizon fill-sky-horizon/30" />
         </div>
 
         {/* Headline */}
@@ -25,12 +22,12 @@ export default function GiveThemAMoment() {
         >
           Give Them a Moment
         </h2>
-        <p className="font-heading text-4xl sm:text-5xl md:text-6xl font-light italic text-amber-400 mb-8">
+        <p className="font-heading text-4xl sm:text-5xl md:text-6xl font-light italic text-sky-horizon mb-10">
           They'll Never Forget
         </p>
 
         {/* Subtext */}
-        <p className="font-body text-sea-salt/70 text-base md:text-lg max-w-md mx-auto mb-12 leading-relaxed">
+        <p className="font-body text-mist-grey text-base md:text-lg max-w-md mx-auto mb-12 leading-relaxed">
           Book your Cruise for Two today. Summer slots are limited — secure your perfect evening on New Jersey Bay before it's gone.
         </p>
 
@@ -44,19 +41,16 @@ export default function GiveThemAMoment() {
           >
             <Button
               size="lg"
-              className="bg-amber-300 text-deep-atlantic font-body font-semibold px-8 py-5 text-base hover:bg-amber-200 focus-ring transition-all rounded-full"
+              className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-8 py-5 text-base hover:bg-sky-horizon/90 focus-ring transition-all"
             >
               Book Your Romantic Cruise
             </Button>
           </a>
-          <a
-            href="/#contact"
-            aria-label="Plan something special — contact us"
-          >
+          <a href="/#about" aria-label="Plan something special — contact us">
             <Button
               size="lg"
               variant="outline"
-              className="border-sea-salt/30 text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-sea-salt/10 focus-ring transition-all rounded-full"
+              className="border-border text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-muted hover:text-sea-salt focus-ring transition-all"
             >
               Plan Something Special
             </Button>
@@ -64,7 +58,7 @@ export default function GiveThemAMoment() {
         </div>
 
         {/* Trust badges */}
-        <p className="font-body text-sea-salt/40 text-xs tracking-wide">
+        <p className="font-body text-mist-grey/50 text-xs tracking-wide">
           Instant confirmation · FareHarbor secure booking · Private experience guaranteed
         </p>
       </div>

@@ -23,7 +23,7 @@ const footerLinks = [
   { label: 'Experience', href: '/#experience' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
-  { label: 'NJ Bay Experience', href: '/blog' },
+  { label: 'NJ Bay Experience', href: '/stone-harbor-bay-experience' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'About Us', href: '/#about-seaspa' },
 ];

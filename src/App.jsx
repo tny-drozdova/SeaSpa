@@ -12,6 +12,8 @@ import BookAParty from './pages/BookAParty';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Blog from './pages/Blog';
+import StoneHarborBayExperience from './pages/StoneHarborBayExperience';
+import BestDateIdeasStoneHarbor from './pages/BestDateIdeasStoneHarbor';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -46,6 +48,8 @@ const AuthenticatedApp = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/stone-harbor-bay-experience" element={<StoneHarborBayExperience />} />
+        <Route path="/best-date-ideas-stone-harbor" element={<BestDateIdeasStoneHarbor />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

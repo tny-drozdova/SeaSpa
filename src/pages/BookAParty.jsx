@@ -7,21 +7,14 @@ import HotTubDataStats from "../components/party/HotTubDataStats";
 import WhatAreYouCelebrating from "../components/party/WhatAreYouCelebrating";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
-
 const GROUP_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/58e1634bf_generated_4d1c9db8.png";
-const BACH_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/7ddcd5b27_generated_123641c1.png";
 
-const occasions = [
-  "Birthdays",
-  "Bachelorettes",
-  "Friend Groups",
-  "Team Off-Sites",
-];
+const occasions = ["Birthdays", "Bachelorettes", "Friend Groups", "Team Off-Sites"];
 
 export default function BookAParty() {
   return (
     <div className="bg-deep-atlantic">
-      {/* Hero */}
+      {/* 1. Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-labelledby="party-hero-heading">
         <div className="absolute inset-0">
           <img
@@ -34,7 +27,6 @@ export default function BookAParty() {
           />
           <div className="absolute inset-0 bg-deep-atlantic/60" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -61,7 +53,16 @@ export default function BookAParty() {
         </div>
       </section>
 
-      {/* Occasion Matrix */}
+      {/* 2. Every Celebration Welcome */}
+      <WhatAreYouCelebrating />
+
+      {/* 3. Hot Tub Data Cards */}
+      <HotTubDataStats />
+
+      {/* 4. Your Party, Your Rules (The Experience) */}
+      <YourPartyYourRules />
+
+      {/* 5. Perfect For Every Occasion */}
       <section className="py-24 md:py-32 bg-deep-atlantic glass-rule" aria-labelledby="occasions-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -99,37 +100,20 @@ export default function BookAParty() {
         </div>
       </section>
 
-      {/* Your Party, Your Rules */}
-      <YourPartyYourRules />
-
-      {/* Data Stats */}
-      <HotTubDataStats />
-
-      {/* What Are You Celebrating */}
-      <WhatAreYouCelebrating />
-
-      {/* Multiple CTAs */}
+      {/* 6. Multiple CTAs */}
       <section className="py-16 bg-deep-atlantic glass-rule" aria-label="Booking options">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <a
-              href={FAREHARBOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer"
               className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
-              aria-label="Book a standard group party via FareHarbor"
-            >
+              aria-label="Book a standard group party via FareHarbor">
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Standard Party</h3>
               <p className="font-body text-mist-grey text-sm mb-4">Up to 6 guests · 90 minutes</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>
             </a>
-            <a
-              href={FAREHARBOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer"
               className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
-              aria-label="Book a multi-boat party fleet via FareHarbor"
-            >
+              aria-label="Book a multi-boat party fleet via FareHarbor">
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Party Fleet</h3>
               <p className="font-body text-mist-grey text-sm mb-4">Multiple boats · Large groups</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>

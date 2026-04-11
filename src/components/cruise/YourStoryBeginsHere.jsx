@@ -1,27 +1,30 @@
 import { motion } from 'framer-motion';
 
-const images = [
+// Add more images here as needed — each gets its own caption
+const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-    alt: "Couple sitting together looking out over calm New Jersey Bay at sunset",
-    caption: '"Just the two of us."',
+    src: "https://media.base44.com/images/public/69d4989a834518931660bae7/ef7f7ec31_coupleexperienceinNJ.jpg",
+    alt: "Couple enjoying a private hot tub boat experience together on New Jersey Bay",
+    caption: "A private escape — just the two of you on the bay.",
     tall: true,
   },
   {
     src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
-    alt: "Stunning golden sunset reflecting on New Jersey Bay waters",
+    alt: "Stunning golden sunset reflecting on New Jersey Bay waters at dusk",
+    caption: "Golden hour views from the water.",
     tall: false,
   },
   {
     src: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600&q=80",
-    alt: "Serene calm turquoise bay water with open horizon",
+    alt: "Serene calm turquoise bay water stretching to the open horizon",
+    caption: "Open water, open sky — pure serenity.",
     tall: false,
   },
 ];
 
 const panoramic = {
   src: "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1200&q=80",
-  alt: "New Jersey Bay night panoramic with city skyline lights reflecting on water",
+  alt: "New Jersey Bay night panoramic with city skyline lights reflecting on calm water",
   caption: "New Jersey Bay — where moments become memories.",
 };
 
@@ -36,7 +39,7 @@ export default function YourStoryBeginsHere() {
           Your Story Begins Here
         </h2>
 
-        {/* Top grid */}
+        {/* Top grid: tall left + two stacked right */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,34 +48,39 @@ export default function YourStoryBeginsHere() {
           className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
         >
           {/* Left tall image */}
-          <div className="relative rounded-2xl overflow-hidden md:row-span-2" style={{ minHeight: '420px' }}>
-            <img
-              src={images[0].src}
-              alt={images[0].alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              width="600"
-              height="700"
-            />
-            {images[0].caption && (
-              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
-                <p className="font-body italic text-white text-sm">{images[0].caption}</p>
-              </div>
+          <div className="flex flex-col">
+            <div className="relative rounded-2xl overflow-hidden flex-1" style={{ minHeight: '420px' }}>
+              <img
+                src={galleryImages[0].src}
+                alt={galleryImages[0].alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width="600"
+                height="700"
+              />
+            </div>
+            {galleryImages[0].caption && (
+              <p className="font-body text-mist-grey text-xs mt-2 px-1 italic">{galleryImages[0].caption}</p>
             )}
           </div>
 
-          {/* Right two stacked images */}
+          {/* Right two stacked */}
           <div className="flex flex-col gap-4">
-            {[images[1], images[2]].map((img, i) => (
-              <div key={i} className="relative rounded-2xl overflow-hidden aspect-[16/9]">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width="600"
-                  height="337"
-                />
+            {galleryImages.slice(1).map((img, i) => (
+              <div key={i} className="flex flex-col">
+                <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width="600"
+                    height="337"
+                  />
+                </div>
+                {img.caption && (
+                  <p className="font-body text-mist-grey text-xs mt-2 px-1 italic">{img.caption}</p>
+                )}
               </div>
             ))}
           </div>
@@ -84,22 +92,25 @@ export default function YourStoryBeginsHere() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative rounded-2xl overflow-hidden aspect-[21/7] md:aspect-[21/6]"
+          className="flex flex-col"
         >
-          <img
-            src={panoramic.src}
-            alt={panoramic.alt}
-            className="w-full h-full object-cover"
-            loading="lazy"
-            width="1200"
-            height="343"
-          />
-          <div className="absolute inset-0 bg-deep-atlantic/40" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="font-heading italic text-sea-salt text-lg md:text-2xl font-light px-6 text-center">
-              {panoramic.caption}
-            </p>
+          <div className="relative rounded-2xl overflow-hidden aspect-[21/7] md:aspect-[21/6]">
+            <img
+              src={panoramic.src}
+              alt={panoramic.alt}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              width="1200"
+              height="343"
+            />
+            <div className="absolute inset-0 bg-deep-atlantic/40" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <p className="font-heading italic text-sea-salt text-lg md:text-2xl font-light px-6 text-center">
+                {panoramic.caption}
+              </p>
+            </div>
           </div>
+          <p className="font-body text-mist-grey text-xs mt-2 px-1 italic text-center">{panoramic.alt}</p>
         </motion.div>
       </div>
     </section>
