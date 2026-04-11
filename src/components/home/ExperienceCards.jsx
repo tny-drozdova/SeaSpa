@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-function ExperienceCard({ image, title, description, linkTo, linkLabel, altText }) {
+function ExperienceCard({ image, title, description, linkTo, linkLabel, altText, linkText = 'Learn More' }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText 
           className="inline-flex items-center gap-2 text-sky-horizon font-body font-semibold text-sm tracking-wide hover:gap-3 transition-all duration-300 focus-ring rounded-sm"
           aria-label={linkLabel}
         >
-          Learn More
+          {linkText}
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
@@ -65,10 +65,11 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <ExperienceCard
             image={romanticImage}
-            title="Romantic Cruise"
-            description="An intimate escape for two, drifting under the stars with champagne and bay views."
+            title="Private Hot Tub Boat in Stone Harbor, NJ"
+            description="Family-friendly things to do that is fun, unique, and guaranteed to be one of the highlights of the summer."
             linkTo="/cruise-for-two"
-            linkLabel="Learn more about the Cruise for Two experience"
+            linkLabel="Explore the hot tub boat experience in Stone Harbor"
+            linkText="Explore the Experience"
             altText="Couple enjoying a romantic hot tub boat cruise on New Jersey Bay at sunset"
           />
           <ExperienceCard
@@ -76,7 +77,8 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
             title="Group Experience"
             description="Celebrate with friends — birthdays, bachelorettes, and every occasion worth remembering."
             linkTo="/book-a-party"
-            linkLabel="Learn more about group party bookings"
+            linkLabel="Plan your group party on the bay"
+            linkText="Plan Your Party"
             altText="Group of friends having fun on a hot tub boat party on New Jersey Bay"
           />
         </div>

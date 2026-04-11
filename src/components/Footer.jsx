@@ -23,8 +23,9 @@ const footerLinks = [
   { label: 'Experience', href: '/#experience' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
+  { label: 'NJ Bay Experience', href: '/blog' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'About Us', href: '/#about' },
+  { label: 'About Us', href: '/#about-seaspa' },
 ];
 
 const legalLinks = [

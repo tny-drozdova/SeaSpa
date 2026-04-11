@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="bg-deep-atlantic min-h-screen pt-24 pb-16">
+    <div className="bg-deep-atlantic min-h-screen pt-28 md:pt-32 pb-16">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-heading text-4xl md:text-5xl font-light text-sea-salt mb-8 tracking-wide">
           Privacy Policy

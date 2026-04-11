@@ -1,16 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Heart, Sunset, Wine, Sparkles } from "lucide-react";
-import FareHarborBookingCTA from "../components/FareHarborBookingCTA";
+import GiveThemAMoment from "../components/cruise/GiveThemAMoment";
+import YourStoryBeginsHere from "../components/cruise/YourStoryBeginsHere";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
-const IMAGES = {
-  hero: "https://media.base44.com/images/public/69d4989a834518931660bae7/5a20b1156_generated_24563928.png",
-  detail: "https://media.base44.com/images/public/69d4989a834518931660bae7/0a2454857_generated_ad721f0f.png",
-  scenic: "https://media.base44.com/images/public/69d4989a834518931660bae7/f89be12d8_generated_8fde6b8e.png",
-  proposal: "https://media.base44.com/images/public/69d4989a834518931660bae7/65099efb5_generated_98fa840b.png",
-};
+const HERO_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/5a20b1156_generated_24563928.png";
 
 const highlights = [
   { icon: Heart, title: "Private Setting", text: "Just the two of you on your own floating oasis" },
@@ -18,10 +14,27 @@ const highlights = [
   { icon: Wine, title: "Relaxing Atmosphere", text: "Warm bubbling water, soft music, and pure serenity" },
 ];
 
-const occasions = [
-  { title: "Date Nights", description: "Elevate your evening with an experience unlike any other" },
-  { title: "Proposals", description: "Pop the question surrounded by water, sky, and golden light" },
-  { title: "Anniversaries", description: "Celebrate your love story on the bay" },
+const milestones = [
+  {
+    number: "01",
+    title: "Date Nights",
+    description: "Elevate your evening with an experience unlike any restaurant or rooftop. The bay at sunset is your backdrop.",
+  },
+  {
+    number: "02",
+    title: "Proposals",
+    description: "Say yes surrounded by water, sky, and golden light. Our captain can help make it seamless and discreet.",
+  },
+  {
+    number: "03",
+    title: "Anniversaries",
+    description: "Whether it's your first or your fiftieth — mark the milestone with an evening that feels as special as your love story.",
+  },
+  {
+    number: "04",
+    title: "Honeymoons",
+    description: "Start your forever together on the bay. An intimate, private, and utterly romantic way to begin the next chapter.",
+  },
 ];
 
 export default function CruiseForTwo() {
@@ -31,7 +44,7 @@ export default function CruiseForTwo() {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-labelledby="romantic-hero-heading">
         <div className="absolute inset-0">
           <img
-            src={IMAGES.hero}
+            src={HERO_IMAGE}
             alt="Couple enjoying a romantic sunset hot tub boat cruise on New Jersey Bay"
             className="w-full h-full object-cover"
             loading="eager"
@@ -97,86 +110,45 @@ export default function CruiseForTwo() {
         </div>
       </section>
 
-      {/* Occasions */}
-      <section className="py-24 md:py-40 bg-white" aria-labelledby="occasions-heading">
+      {/* Perfect for Every Milestone */}
+      <section className="py-24 md:py-40 bg-white" aria-labelledby="milestones-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
+            <p className="font-body text-sky-horizon text-xs font-semibold tracking-widest uppercase mb-4">
               Perfect For
             </p>
-            <h2 id="occasions-heading" className="font-heading text-3xl md:text-5xl font-light text-deep-atlantic tracking-wide">
-              Every Special Moment
+            <h2 id="milestones-heading" className="font-heading text-3xl md:text-5xl font-light text-deep-atlantic tracking-wide">
+              Every Milestone
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {occasions.map((o, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {milestones.map((m, i) => (
               <motion.div
-                key={o.title}
+                key={m.number}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="border border-deep-atlantic/10 rounded-lg p-8 text-center hover:border-sky-horizon/40 transition-colors"
+                className="flex gap-6 p-8 rounded-2xl border border-deep-atlantic/8 hover:border-sky-horizon/30 transition-colors"
               >
-                <h3 className="font-heading text-2xl font-light text-deep-atlantic mb-3">{o.title}</h3>
-                <p className="font-body text-mist-grey text-sm leading-relaxed">{o.description}</p>
+                <span className="font-heading text-3xl font-light text-deep-atlantic/20 flex-shrink-0 leading-none">
+                  {m.number}
+                </span>
+                <div>
+                  <h3 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-2">{m.title}</h3>
+                  <p className="font-body text-mist-grey text-sm leading-relaxed">{m.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Visual Story */}
-      <section className="py-24 md:py-40 bg-sea-salt" aria-label="Visual story of the romantic cruise experience">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="bg-white p-4 md:p-6 rounded-sm shadow-sm rotate-[-1deg]">
-                <img
-                  src={IMAGES.detail}
-                  alt="Close-up of champagne flutes held over a hot tub with NJ Bay sunset in background"
-                  className="w-full aspect-[4/5] object-cover rounded-sm"
-                  loading="lazy"
-                  width="600"
-                  height="750"
-                />
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative mt-8 md:mt-16"
-            >
-              <div className="bg-white p-4 md:p-6 rounded-sm shadow-sm rotate-[1deg]">
-                <img
-                  src={IMAGES.proposal}
-                  alt="Romantic proposal moment on a luxury hot tub boat at sunset with rose petals"
-                  className="w-full aspect-[4/5] object-cover rounded-sm"
-                  loading="lazy"
-                  width="600"
-                  height="750"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Your Story Begins Here gallery */}
+      <YourStoryBeginsHere />
 
-      {/* CTA */}
-      <FareHarborBookingCTA
-        headline="Book Your Romantic Cruise"
-        subtext="Create memories that last a lifetime, floating together under the sky."
-        buttonText="Reserve for Two"
-        variant="dark"
-      />
+      {/* Give Them a Moment CTA */}
+      <GiveThemAMoment />
     </div>
   );
 }

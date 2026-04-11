@@ -11,6 +11,7 @@ import CruiseForTwo from './pages/CruiseForTwo';
 import BookAParty from './pages/BookAParty';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import Blog from './pages/Blog';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -44,6 +45,7 @@ const AuthenticatedApp = () => {
         <Route path="/book-a-party" element={<BookAParty />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

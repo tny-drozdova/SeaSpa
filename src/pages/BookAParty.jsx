@@ -1,27 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { PartyPopper, Users, Music, Camera } from "lucide-react";
+import { PartyPopper } from "lucide-react";
 import FareHarborBookingCTA from "../components/FareHarborBookingCTA";
+import YourPartyYourRules from "../components/party/YourPartyYourRules";
+import HotTubDataStats from "../components/party/HotTubDataStats";
+import WhatAreYouCelebrating from "../components/party/WhatAreYouCelebrating";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
-const IMAGES = {
-  hero: "https://media.base44.com/images/public/69d4989a834518931660bae7/58e1634bf_generated_4d1c9db8.png",
-  bachelorette: "https://media.base44.com/images/public/69d4989a834518931660bae7/7ddcd5b27_generated_123641c1.png",
-};
+const GROUP_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/58e1634bf_generated_4d1c9db8.png";
+const BACH_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/7ddcd5b27_generated_123641c1.png";
 
 const occasions = [
   "Birthdays",
   "Bachelorettes",
   "Friend Groups",
   "Team Off-Sites",
-];
-
-const features = [
-  { icon: Users, title: "Up to 6 Guests", text: "Bring your crew for a private 90-minute party on the water" },
-  { icon: Music, title: "Bluetooth Speaker", text: "Connect your playlist and set the vibe for your group" },
-  { icon: Camera, title: "Photo-Worthy", text: "Every angle is Instagram-worthy — golden hour guaranteed" },
-  { icon: PartyPopper, title: "Celebration Ready", text: "We can help coordinate decorations and special touches" },
 ];
 
 export default function BookAParty() {
@@ -31,7 +25,7 @@ export default function BookAParty() {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-labelledby="party-hero-heading">
         <div className="absolute inset-0">
           <img
-            src={IMAGES.hero}
+            src={GROUP_IMAGE}
             alt="Group of friends laughing and celebrating on a luxury hot tub boat on New Jersey Bay at golden hour"
             className="w-full h-full object-cover"
             loading="eager"
@@ -105,50 +99,14 @@ export default function BookAParty() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-24 md:py-40 bg-deep-atlantic glass-rule" aria-labelledby="features-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <h2 id="features-heading" className="font-heading text-3xl md:text-4xl font-light text-sea-salt tracking-wide mb-12">
-                Everything You Need for the Perfect Party
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {features.map((f, i) => (
-                  <motion.div
-                    key={f.title}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                  >
-                    <f.icon className="w-6 h-6 text-sky-horizon mb-3" aria-hidden="true" />
-                    <h3 className="font-body font-semibold text-sea-salt text-sm mb-2">{f.title}</h3>
-                    <p className="font-body text-mist-grey text-sm leading-relaxed">{f.text}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="aspect-[3/2] rounded-lg overflow-hidden">
-                <img
-                  src={IMAGES.bachelorette}
-                  alt="Bachelorette party group celebrating on a luxury hot tub boat with confetti at golden hour"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width="800"
-                  height="533"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Your Party, Your Rules */}
+      <YourPartyYourRules />
+
+      {/* Data Stats */}
+      <HotTubDataStats />
+
+      {/* What Are You Celebrating */}
+      <WhatAreYouCelebrating />
 
       {/* Multiple CTAs */}
       <section className="py-16 bg-deep-atlantic glass-rule" aria-label="Booking options">
@@ -162,7 +120,7 @@ export default function BookAParty() {
               aria-label="Book a standard group party via FareHarbor"
             >
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Standard Party</h3>
-              <p className="font-body text-mist-grey text-sm mb-4">Up to 6 guests • 90 minutes</p>
+              <p className="font-body text-mist-grey text-sm mb-4">Up to 6 guests · 90 minutes</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>
             </a>
             <a
@@ -173,7 +131,7 @@ export default function BookAParty() {
               aria-label="Book a multi-boat party fleet via FareHarbor"
             >
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Party Fleet</h3>
-              <p className="font-body text-mist-grey text-sm mb-4">Multiple boats • Large groups</p>
+              <p className="font-body text-mist-grey text-sm mb-4">Multiple boats · Large groups</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>
             </a>
           </div>

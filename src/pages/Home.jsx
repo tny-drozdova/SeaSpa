@@ -8,6 +8,7 @@ import TestimonialsSection from '../components/home/TestimonialsSection';
 import FAQAccordion from '../components/home/FAQAccordion';
 import MapEmbed from '../components/home/MapEmbed';
 import ContactForm from '../components/home/ContactForm';
+import AboutSection from '../components/home/AboutSection';
 
 const IMAGES = {
   hero: "https://media.base44.com/images/public/69d4989a834518931660bae7/39b613c97_generated_cf7a412f.png",
@@ -25,14 +26,15 @@ export default function Home() {
       <GoogleReviewCards />
       <InstagramRibbon />
       <FareHarborBookingCTA
-        headline="Ready to Experience the Bay?"
-        subtext="Book your private hot tub boat cruise on New Jersey Bay today. Summer slots fill fast — secure your date now through our instant online booking."
-        buttonText="Book Your Escape"
+        headline="Plan Your Private Cruise in Avalon or Stone Harbor, NJ"
+        subtext="Located in the heart of the Jersey Shore, SeaSpa Cruises offers easy access from both Avalon and Stone Harbor. Whether you're visiting for the weekend or staying all summer, this experience fits perfectly into your plans."
+        buttonText="Book Your Bay Experience"
       />
       <TestimonialsSection />
       <FAQAccordion />
       <MapEmbed />
       <ContactForm />
+      <AboutSection />
     </>
   );
 }

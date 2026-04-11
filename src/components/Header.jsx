@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'About Us', href: '/#about' },
+  { label: 'About Us', href: '/#about-seaspa' },
 ];
 
 export default function Header() {
