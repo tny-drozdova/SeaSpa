@@ -24,7 +24,11 @@ export default function Home() {
       <ExperienceCards romanticImage={IMAGES.romantic} groupImage={IMAGES.group} />
       <GoogleReviewCards />
       <InstagramRibbon />
-      <FareHarborBookingCTA />
+      <FareHarborBookingCTA
+        headline="Ready to Experience the Bay?"
+        subtext="Book your private hot tub boat cruise on New Jersey Bay today. Summer slots fill fast — secure your date now through our instant online booking."
+        buttonText="Book Your Escape"
+      />
       <TestimonialsSection />
       <FAQAccordion />
       <MapEmbed />

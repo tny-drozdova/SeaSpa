@@ -29,6 +29,9 @@ export default function HeroSection({ heroImage }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-6">
+            New Jersey Bay · Summer 2026
+          </p>
           <h1
             id="hero-heading"
             className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-sea-salt tracking-wider mb-6"
@@ -54,6 +57,13 @@ export default function HeroSection({ heroImage }) {
             >
               Book Your Escape
             </Button>
+          </a>
+          <a
+            href="#booking-cta-heading"
+            onClick={(e) => { e.preventDefault(); document.getElementById('booking-cta-heading')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className="block mt-5 font-body text-sea-salt/60 hover:text-sky-horizon text-sm tracking-wide underline underline-offset-4 transition-colors focus-ring rounded-sm"
+          >
+            Unique Jersey Shore Experiences
           </a>
         </motion.div>
       </div>

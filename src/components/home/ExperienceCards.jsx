@@ -53,10 +53,13 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
           </p>
           <h2
             id="experiences-heading"
-            className="font-heading text-3xl md:text-5xl font-light text-sea-salt"
+            className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4"
           >
-            Two Ways to Cruise
+            Every Occasion, One Bay
           </h2>
+          <p className="font-body text-mist-grey text-base md:text-lg max-w-xl mx-auto">
+            Whether it's a romantic escape or a celebration with your crew — we have the perfect cruise.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
