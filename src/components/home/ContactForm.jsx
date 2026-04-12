@@ -6,30 +6,31 @@ import { Label } from "@/components/ui/label";
 import { MessageSquare } from 'lucide-react';
 import { toast } from "sonner";
 
-const PHONE_REGEX = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+// Strict US 10-digit: accepts 555-123-4567 / (555) 123-4567 / 5551234567 / +15551234567
+const PHONE_REGEX = /^(\+1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', phone: '', message: '', smsConsent: false });
-  const [phoneError, setPhoneError] = useState('');
+  const [errors, setErrors] = useState({});
   const [sending, setSending] = useState(false);
 
-  const validatePhone = (value) => {
-    if (!value) return 'Phone number is required.';
-    if (!PHONE_REGEX.test(value.trim())) return 'Please enter a valid phone number (e.g. 555-123-4567).';
-    return '';
-  };
-
-  const handlePhoneChange = (e) => {
-    const val = e.target.value;
-    setForm({ ...form, phone: val });
-    if (phoneError) setPhoneError(validatePhone(val));
+  const validate = () => {
+    const newErrors = {};
+    if (!form.name.trim()) newErrors.name = 'Name is required.';
+    if (!form.phone.trim()) {
+      newErrors.phone = 'Phone number is required.';
+    } else if (!PHONE_REGEX.test(form.phone.trim())) {
+      newErrors.phone = 'Please enter a valid US phone number (e.g. 555-123-4567).';
+    }
+    if (!form.message.trim()) newErrors.message = 'Message is required.';
+    return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const err = validatePhone(form.phone);
-    if (err) {
-      setPhoneError(err);
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
     setSending(true);
@@ -37,6 +38,11 @@ export default function ContactForm() {
     window.open(`sms:+1XXXXXXXXXX?body=${smsBody}`, '_self');
     toast.success("Opening your messaging app...");
     setSending(false);
+  };
+
+  const handleChange = (field, value) => {
+    setForm((f) => ({ ...f, [field]: value }));
+    if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
   };
 
   return (
@@ -50,10 +56,7 @@ export default function ContactForm() {
           <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
             Get in Touch
           </p>
-          <h2
-            id="contact-heading"
-            className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4"
-          >
+          <h2 id="contact-heading" className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4">
             Contact Us
           </h2>
           <p className="text-mist-grey text-sm font-body">
@@ -61,12 +64,9 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-muted rounded-lg p-5 sm:p-8 md:p-10 space-y-5"
-          noValidate
-        >
+        <form onSubmit={handleSubmit} className="bg-muted rounded-lg p-5 sm:p-8 md:p-10 space-y-5" noValidate>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Name */}
             <div>
               <Label htmlFor="contact-name" className="font-body text-sea-salt text-sm mb-2 block">
                 Name <span className="text-sky-horizon" aria-label="required">*</span>
@@ -76,12 +76,16 @@ export default function ContactForm() {
                 type="text"
                 required
                 aria-required="true"
+                aria-describedby={errors.name ? "name-error" : undefined}
                 value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring"
+                onChange={(e) => handleChange('name', e.target.value)}
+                className={`bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring ${errors.name ? 'border-red-400' : ''}`}
                 placeholder="Your name"
               />
+              {errors.name && <p id="name-error" className="text-red-400 text-xs mt-1 font-body" role="alert">{errors.name}</p>}
             </div>
+
+            {/* Phone */}
             <div>
               <Label htmlFor="contact-phone" className="font-body text-sea-salt text-sm mb-2 block">
                 Phone <span className="text-sky-horizon" aria-label="required">*</span>
@@ -91,21 +95,20 @@ export default function ContactForm() {
                 type="tel"
                 required
                 aria-required="true"
-                aria-describedby={phoneError ? "phone-error" : undefined}
+                aria-describedby={errors.phone ? "phone-error" : "phone-hint"}
                 value={form.phone}
-                onChange={handlePhoneChange}
-                onBlur={() => setPhoneError(validatePhone(form.phone))}
-                className={`bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring ${phoneError ? 'border-red-400' : ''}`}
-                placeholder="(555) 123-4567"
+                onChange={(e) => handleChange('phone', e.target.value)}
+                className={`bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring ${errors.phone ? 'border-red-400' : ''}`}
+                placeholder="555-123-4567"
               />
-              {phoneError && (
-                <p id="phone-error" className="text-red-400 text-xs mt-1 font-body" role="alert">
-                  {phoneError}
-                </p>
-              )}
+              {errors.phone
+                ? <p id="phone-error" className="text-red-400 text-xs mt-1 font-body" role="alert">{errors.phone}</p>
+                : <p id="phone-hint" className="text-mist-grey/50 text-xs mt-1 font-body">Format: 555-123-4567</p>
+              }
             </div>
           </div>
 
+          {/* Message */}
           <div>
             <Label htmlFor="contact-message" className="font-body text-sea-salt text-sm mb-2 block">
               Message <span className="text-sky-horizon" aria-label="required">*</span>
@@ -114,11 +117,13 @@ export default function ContactForm() {
               id="contact-message"
               required
               rows={4}
+              aria-describedby={errors.message ? "message-error" : undefined}
               value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring resize-none"
+              onChange={(e) => handleChange('message', e.target.value)}
+              className={`bg-background border-border text-sea-salt placeholder:text-mist-grey/50 focus-ring resize-none ${errors.message ? 'border-red-400' : ''}`}
               placeholder="Tell us about your plans..."
             />
+            {errors.message && <p id="message-error" className="text-red-400 text-xs mt-1 font-body" role="alert">{errors.message}</p>}
           </div>
 
           {/* SMS Consent */}
@@ -132,13 +137,9 @@ export default function ContactForm() {
                 onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
                 className="mt-0.5 w-4 h-4 rounded border-border text-sky-horizon focus-ring accent-sky-horizon flex-shrink-0"
               />
-              <span className="font-body text-sea-salt/80 text-sm">
-                I agree to be contacted via SMS.
-              </span>
+              <span className="font-body text-sea-salt/80 text-sm">I agree to be contacted via SMS.</span>
             </label>
-            <p className="font-body text-mist-grey/60 text-xs pl-7">
-              Standard messaging rates may apply.
-            </p>
+            <p className="font-body text-mist-grey/60 text-xs pl-7">Standard messaging rates may apply.</p>
           </div>
 
           <Button

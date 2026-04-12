@@ -6,8 +6,8 @@ const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 export default function UltimateExperienceSection({ image }) {
   return (
     <section
-      id="experience"
-      className="py-24 md:py-40 bg-deep-atlantic"
+      id="experiences-hot-tub-boat-stone-harbor-NJ"
+      className="py-15 md:py-40 bg-deep-atlantic"
       aria-labelledby="ultimate-heading">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,6 +66,7 @@ export default function UltimateExperienceSection({ image }) {
               width="800"
               height="533" />
               
+              <p className="font-body text-mist-grey/70 text-xs mt-3 italic">Couple enjoying a private hot tub boat cruise on New Jersey Bay — 90 minutes of relaxation and stunning bay views.</p>
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-sky-horizon/30 rounded-lg" aria-hidden="true" />
           </motion.div>

@@ -42,7 +42,7 @@ export default function CruiseForTwo() {
   return (
     <div className="light-theme bg-sea-salt">
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-labelledby="romantic-hero-heading">
+      <section className="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="romantic-hero-heading">
         <div className="absolute inset-0">
           <img
             src={HERO_IMAGE}
@@ -75,7 +75,7 @@ export default function CruiseForTwo() {
             </p>
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your romantic cruise via FareHarbor">
               <Button size="lg" className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 focus-ring transition-all">
-                Book Your Romantic Cruise
+                Plan Your Romantic Cruise
               </Button>
             </a>
           </motion.div>

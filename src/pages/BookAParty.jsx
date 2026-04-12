@@ -15,7 +15,7 @@ export default function BookAParty() {
   return (
     <div className="bg-deep-atlantic">
       {/* 1. Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-labelledby="party-hero-heading">
+      <section className="relative min-h-screen flex items-center overflow-hidden" aria-labelledby="party-hero-heading">
         <div className="absolute inset-0">
           <img
             src={GROUP_IMAGE}

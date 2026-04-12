@@ -39,7 +39,7 @@ const faqs = [
 export default function FAQAccordion() {
   return (
     <section
-      id="faq"
+      id="FAQ-hot-tub-boat-NJ"
       className="py-24 md:py-40 bg-deep-atlantic glass-rule"
       aria-labelledby="faq-heading"
     >

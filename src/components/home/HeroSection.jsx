@@ -65,6 +65,12 @@ export default function HeroSection({ heroImage }) {
             
             Unique Jersey Shore Experiences
           </a>
+          <a
+            href="/unique-experience-NJ"
+            className="block mt-3 font-body text-sky-horizon/80 hover:text-sky-horizon text-sm tracking-wide underline underline-offset-4 transition-colors focus-ring rounded-sm"
+          >
+            Plan your unique NJ activity
+          </a>
         </motion.div>
       </div>
 

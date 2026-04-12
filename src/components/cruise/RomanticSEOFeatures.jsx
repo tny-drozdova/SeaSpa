@@ -24,7 +24,7 @@ const features = [
     title: "Panoramic Bay Views",
     body1: "Breathtaking 360° views of the New Jersey Bay, the Manhattan skyline, and the open water at golden hour.",
     body2: "The New Jersey Bay offers some of the most spectacular waterfront views on the East Coast. Watch the sun dip below the horizon while you soak — a view you'll never forget.",
-    cta: "Plan the Perfect Date Night",
+    cta: "Book the Perfect Date Night",
     ctaHref: FAREHARBOR_URL,
     external: true,
     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&q=80",

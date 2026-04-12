@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <section
-      id="about-seaspa"
+      id="about-seaspacruises"
       className="py-24 md:py-32 bg-sea-salt"
       aria-labelledby="about-heading">
       

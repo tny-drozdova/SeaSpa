@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const navLinks = [
-  { label: 'Experience', href: '/#experience' },
+  { label: 'Experience', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'Find Us', href: '/#find-us' },
-  { label: 'About Us', href: '/#about-seaspa' },
+  { label: 'FAQ', href: '/#FAQ-hot-tub-boat-NJ' },
+  { label: 'Find Us', href: '/#location-hot-tub-boat-NJ' },
+  { label: 'About Us', href: '/#about-seaspacruises' },
 ];
 
 export default function Header() {
@@ -70,7 +70,7 @@ export default function Header() {
                 key={link.label}
                 to={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-sea-salt/80 hover:text-sky-horizon text-sm font-body font-medium tracking-wide transition-colors duration-200 focus-ring rounded-sm py-1"
+                className="text-sea-salt/80 hover:text-sky-horizon text-sm font-body font-medium tracking-wide transition-colors duration-200 rounded-sm py-1 px-2 hover:outline hover:outline-2 hover:outline-sky-horizon hover:outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-horizon focus-visible:outline-offset-2 focus-visible:rounded"
               >
                 {link.label}
               </Link>
@@ -122,7 +122,7 @@ export default function Header() {
                   key={link.label}
                   to={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sea-salt/80 hover:text-sky-horizon hover:bg-sea-salt/5 px-4 py-3 rounded-md text-base font-body font-medium tracking-wide transition-colors focus-ring"
+                  className="text-sea-salt/80 hover:text-sky-horizon hover:bg-sea-salt/5 px-4 py-3 rounded-md text-base font-body font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-horizon"
                 >
                   {link.label}
                 </Link>
