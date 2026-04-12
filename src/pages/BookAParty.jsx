@@ -87,7 +87,7 @@ export default function BookAParty() {
                 className="block glass-card rounded-lg p-6 md:p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring"
                 aria-label={`Book for ${o} via FareHarbor`}>
                 
-                  <span className="font-heading text-xl md:text-2xl font-light text-sea-salt group-hover:text-sky-horizon transition-colors tracking-wide">
+                  <span className="text-sea-salt text-base font-light tracking-wide md:text-2xl group-hover:text-sky-horizon transition-colors">
                     {o.toUpperCase()}
                   </span>
                   <span className="block text-sky-horizon text-xs font-body mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
