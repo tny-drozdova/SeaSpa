@@ -28,14 +28,14 @@ export default function UltimateExperienceSection({ image }) {
               
               Enjoy a 90-Minute Private Hot Tub Boat Adventure
             </h2>
-            <p className="text-mist-grey mb-6 text-base font-body leading-relaxed">Drift across the stunning New Jersey Bay in your own private hot tub boat. Feel the warmth of the water as you take in panoramic views of the skyline, natural marshlands, and golden sunsets.
-
-
-
+            <p className="font-body text-mist-grey text-lg leading-relaxed mb-6">
+              Drift across the stunning New Jersey Bay in your own private hot tub boat. 
+              Feel the warmth of the water as you take in panoramic views of the skyline, 
+              natural marshlands, and golden sunsets.
             </p>
-            <p className="text-mist-grey mb-10 text-base font-body leading-relaxed">Whether it's a romantic evening for two or a celebration with friends, every cruise is a fully private, unforgettable experience.
-
-
+            <p className="font-body text-mist-grey text-lg leading-relaxed mb-10">
+              Whether it's a romantic evening for two or a celebration with friends, 
+              every cruise is a fully private, unforgettable experience.
             </p>
             <a
               href={FAREHARBOR_URL}
