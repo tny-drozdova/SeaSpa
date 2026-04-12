@@ -36,10 +36,10 @@ export default function BookAParty() {
             
             <PartyPopper className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
-              id="party-hero-heading"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6">
-              
-              Book a Party on the Bay
+              id="party-hero-heading" className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6">Book a Party on the Bay
+
+
+
             </h1>
             <p className="text-sea-salt/80 mb-10 text-base font-body leading-relaxed">The ultimate group experience — a private hot tub boat celebration with your favorite people.
 
