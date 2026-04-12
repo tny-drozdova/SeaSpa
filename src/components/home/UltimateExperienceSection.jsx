@@ -20,22 +20,29 @@ export default function UltimateExperienceSection({ image }) {
             transition={{ duration: 0.7 }}>
             
             <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
-              The Ultimate Bay Experience
+              Stone Harbor, NJ · Summer 2026
             </p>
             <h2
               id="ultimate-heading"
               className="font-heading text-3xl md:text-5xl font-light text-sea-salt leading-tight mb-8">
-              
-              Enjoy a 90-Minute Private Hot Tub Boat Adventure
+              Make 2026 the Summer You'll Never Forget
             </h2>
-            <p className="font-body text-mist-grey text-lg leading-relaxed mb-6">
-              Drift across the stunning New Jersey Bay in your own private hot tub boat. 
-              Feel the warmth of the water as you take in panoramic views of the skyline, 
-              natural marshlands, and golden sunsets.
+            <p className="font-body text-mist-grey text-lg leading-relaxed mb-4">
+              This summer, don't settle for ordinary.
+            </p>
+            <p className="font-body text-mist-grey text-lg leading-relaxed mb-4">
+              Trade crowded beaches and predictable plans for something truly unforgettable.
+            </p>
+            <ul className="font-body text-mist-grey text-lg leading-relaxed mb-4 space-y-1">
+              <li>Be the captain.</li>
+              <li>Choose your adventure.</li>
+              <li>Soak, cruise, laugh, and relax.</li>
+            </ul>
+            <p className="font-body text-mist-grey text-lg leading-relaxed mb-4">
+              SeaSpa Cruises is ready to make your Stone Harbor summer unlike anything you've ever experienced.
             </p>
             <p className="font-body text-mist-grey text-lg leading-relaxed mb-10">
-              Whether it's a romantic evening for two or a celebration with friends, 
-              every cruise is a fully private, unforgettable experience.
+              Book your private hot tub boat today — and make your best summer memory on the water.
             </p>
             <a
               href={FAREHARBOR_URL}
@@ -44,7 +51,7 @@ export default function UltimateExperienceSection({ image }) {
               aria-label="Book your cruise via FareHarbor">
               
               <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-8 py-5 hover:bg-sky-horizon/90 focus-ring transition-all">
-                Reserve Your Cruise
+                Reserve your Hot Tub Boat
               </Button>
             </a>
           </motion.div>
