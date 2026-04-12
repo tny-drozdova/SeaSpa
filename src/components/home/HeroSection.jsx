@@ -6,7 +6,7 @@ const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 export default function HeroSection({ heroImage }) {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* Background Image */}
@@ -39,10 +39,10 @@ export default function HeroSection({ heroImage }) {
             <span className="block">SEA</span>
             <span className="block font-semibold text-sky-horizon">SPA</span>
           </h1>
-          <p className="font-body text-sea-salt/80 text-lg md:text-xl max-w-xl mx-auto mb-4 leading-relaxed">
+          <p className="font-body text-sea-salt/80 text-base md:text-xl max-w-xl mx-auto mb-4 leading-relaxed">
             A private hot tub boat experience on New Jersey Bay
           </p>
-          <p className="font-body text-mist-grey text-sm md:text-base max-w-md mx-auto mb-10">
+          <p className="font-body text-mist-grey text-xs md:text-base max-w-md mx-auto mb-8">
             90 minutes of luxury, relaxation, and unforgettable views
           </p>
           <a

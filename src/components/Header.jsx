@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
   { label: 'FAQ', href: '/#faq' },
+  { label: 'Find Us', href: '/#find-us' },
   { label: 'About Us', href: '/#about-seaspa' },
 ];
 

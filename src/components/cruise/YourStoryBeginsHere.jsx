@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 // Add more images here as needed — each gets its own caption
 const galleryImages = [
   {
-    src: "https://media.base44.com/images/public/69d4989a834518931660bae7/ef7f7ec31_coupleexperienceinNJ.jpg",
-    alt: "Couple enjoying a private hot tub boat experience together on New Jersey Bay",
-    caption: "A private escape — just the two of you on the bay.",
+    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80",
+    alt: "Romantic proposal on a bay at sunset — a couple sharing a special moment on the water",
+    caption: "The perfect moment for a proposal on New Jersey Bay.",
     tall: true,
   },
   {

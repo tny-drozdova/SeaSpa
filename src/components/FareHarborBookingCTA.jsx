@@ -35,7 +35,7 @@ export default function FareHarborBookingCTA({
         >
           <Button
             size="lg"
-            className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 focus-ring animate-ripple transition-all duration-200"
+            className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 hover:ring-[3px] hover:ring-white focus-ring animate-ripple transition-all duration-200"
           >
             {buttonText}
           </Button>

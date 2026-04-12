@@ -50,7 +50,7 @@ export default function GiveThemAMoment() {
             <Button
               size="lg"
               variant="outline"
-              className="border-border text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-muted hover:text-sea-salt focus-ring transition-all"
+              className="border-sea-salt text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-sea-salt hover:text-deep-atlantic focus-ring transition-all hover:ring-[3px] hover:ring-white"
             >
               Plan Something Special
             </Button>

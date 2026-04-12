@@ -10,7 +10,7 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e
 const sidebarArticles = [
   {
     title: "Best Date Ideas in Stone Harbor NJ",
-    href: "/best-date-ideas-stone-harbor",
+    href: "/blog/best-date-ideas-stone-harbor",
     description: "Romantic activities and experiences for couples visiting Stone Harbor.",
   },
   {

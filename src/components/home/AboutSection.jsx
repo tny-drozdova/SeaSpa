@@ -12,7 +12,7 @@ export default function AboutSection() {
           
           About SeaSpa Cruises
         </h2>
-        <p className="text-[hsl(var(--card))] text-base font-body leading-relaxed md:text-lg">SeaSpa Cruises is New Jersey's premier private hot tub boat experience. We operate on the beautiful New Jersey Bay, offering 90-minute private cruises for couples, groups, and anyone looking for a truly unforgettable water adventure. Our licensed captains ensure a safe, relaxing, and magical experience every time.
+        <p className="text-deep-atlantic/80 text-base font-body leading-relaxed md:text-lg">SeaSpa Cruises is New Jersey's premier private hot tub boat experience. We operate on the beautiful New Jersey Bay, offering 90-minute private cruises for couples, groups, and anyone looking for a truly unforgettable water adventure. Our licensed captains ensure a safe, relaxing, and magical experience every time.
 
         </p>
       </div>

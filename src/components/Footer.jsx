@@ -23,7 +23,8 @@ const footerLinks = [
   { label: 'Experience', href: '/#experience' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
   { label: 'Book a Party', href: '/book-a-party' },
-  { label: 'NJ Bay Experience', href: '/stone-harbor-bay-experience' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Unique Experience in NJ', href: '/unique-experience-NJ' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'About Us', href: '/#about-seaspa' },
 ];
@@ -67,6 +68,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
+                    onClick={() => window.scrollTo({ top: 0 })}
                     className="text-mist-grey hover:text-sky-horizon text-sm transition-colors focus-ring rounded-sm"
                   >
                     {link.label}

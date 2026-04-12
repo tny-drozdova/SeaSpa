@@ -49,7 +49,8 @@ const AuthenticatedApp = () => {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/stone-harbor-bay-experience" element={<StoneHarborBayExperience />} />
-        <Route path="/best-date-ideas-stone-harbor" element={<BestDateIdeasStoneHarbor />} />
+        <Route path="/blog/best-date-ideas-stone-harbor" element={<BestDateIdeasStoneHarbor />} />
+        <Route path="/unique-experience-NJ" element={<StoneHarborBayExperience />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

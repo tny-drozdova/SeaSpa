@@ -43,7 +43,7 @@ const sidebarArticles = [
   },
   {
     title: "NJ Bay Experience",
-    href: "/stone-harbor-bay-experience",
+    href: "/unique-experience-NJ",
     description: "Everything you need to know about the SeaSpa hot tub boat experience.",
   },
 ];
