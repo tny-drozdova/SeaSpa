@@ -7,8 +7,8 @@ export default function GiveThemAMoment() {
   return (
     <section
       className="relative py-32 md:py-40 bg-deep-atlantic overflow-hidden glass-rule"
-      aria-labelledby="give-moment-heading"
-    >
+      aria-labelledby="give-moment-heading">
+      
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heart icon */}
         <div className="w-12 h-12 rounded-full bg-sky-horizon/10 border border-sky-horizon/20 flex items-center justify-center mx-auto mb-8" aria-hidden="true">
@@ -18,8 +18,8 @@ export default function GiveThemAMoment() {
         {/* Headline */}
         <h2
           id="give-moment-heading"
-          className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt mb-3"
-        >
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt mb-3">
+          
           Give Them a Moment
         </h2>
         <p className="font-heading text-4xl sm:text-5xl md:text-6xl font-light italic text-sky-horizon mb-10">
@@ -37,12 +37,12 @@ export default function GiveThemAMoment() {
             href={FAREHARBOR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book your romantic cruise via FareHarbor"
-          >
+            aria-label="Book your romantic cruise via FareHarbor">
+            
             <Button
-              size="lg"
-              className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-8 py-5 text-base hover:bg-sky-horizon/90 focus-ring transition-all"
-            >
+              size="lg" className="bg-[hsl(var(--primary))] text-deep-atlantic px-8 py-5 text-base font-semibold rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 focus-ring transition-all">
+
+              
               Book Your Romantic Cruise
             </Button>
           </a>
@@ -50,8 +50,8 @@ export default function GiveThemAMoment() {
             <Button
               size="lg"
               variant="outline"
-              className="border-sea-salt text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-sea-salt hover:text-deep-atlantic focus-ring transition-all hover:ring-[3px] hover:ring-white"
-            >
+              className="border-border text-sea-salt font-body font-semibold px-8 py-5 text-base hover:bg-muted hover:text-sea-salt focus-ring transition-all">
+              
               Plan Something Special
             </Button>
           </a>
@@ -62,6 +62,6 @@ export default function GiveThemAMoment() {
           Instant confirmation · FareHarbor secure booking · Private experience guaranteed
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 }
