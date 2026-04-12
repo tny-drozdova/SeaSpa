@@ -23,8 +23,8 @@ export default function BookAParty() {
             className="w-full h-full object-cover"
             loading="eager"
             width="1920"
-            height="1080"
-          />
+            height="1080" />
+          
           <div className="absolute inset-0 bg-deep-atlantic/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
@@ -32,17 +32,17 @@ export default function BookAParty() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl"
-          >
+            className="max-w-xl">
+            
             <PartyPopper className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
               id="party-hero-heading"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6"
-            >
+              className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6">
+              
               Book a Party on the Bay
             </h1>
-            <p className="font-body text-sea-salt/80 text-lg leading-relaxed mb-10">
-              The ultimate group experience — a private hot tub boat celebration with your favorite people.
+            <p className="text-sea-salt/80 mb-10 text-base font-body leading-relaxed">The ultimate group experience — a private hot tub boat celebration with your favorite people.
+
             </p>
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your group party via FareHarbor">
               <Button size="lg" className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 focus-ring animate-ripple transition-all">
@@ -71,22 +71,22 @@ export default function BookAParty() {
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {occasions.map((o, i) => (
-              <motion.div
-                key={o}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="group"
-              >
+            {occasions.map((o, i) =>
+            <motion.div
+              key={o}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="group">
+              
                 <a
-                  href={FAREHARBOR_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block glass-card rounded-lg p-6 md:p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring"
-                  aria-label={`Book for ${o} via FareHarbor`}
-                >
+                href={FAREHARBOR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block glass-card rounded-lg p-6 md:p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring"
+                aria-label={`Book for ${o} via FareHarbor`}>
+                
                   <span className="font-heading text-xl md:text-2xl font-light text-sea-salt group-hover:text-sky-horizon transition-colors tracking-wide">
                     {o.toUpperCase()}
                   </span>
@@ -95,7 +95,7 @@ export default function BookAParty() {
                   </span>
                 </a>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -105,15 +105,15 @@ export default function BookAParty() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer"
-              className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
-              aria-label="Book a standard group party via FareHarbor">
+            className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
+            aria-label="Book a standard group party via FareHarbor">
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Standard Party</h3>
               <p className="font-body text-mist-grey text-sm mb-4">Up to 6 guests · 90 minutes</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>
             </a>
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer"
-              className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
-              aria-label="Book a multi-boat party fleet via FareHarbor">
+            className="glass-card rounded-lg p-8 text-center hover:border-sky-horizon/50 transition-all focus-ring block"
+            aria-label="Book a multi-boat party fleet via FareHarbor">
               <h3 className="font-heading text-2xl font-light text-sea-salt mb-2">Party Fleet</h3>
               <p className="font-body text-mist-grey text-sm mb-4">Multiple boats · Large groups</p>
               <span className="text-sky-horizon font-body font-semibold text-sm">Book Now →</span>
@@ -125,8 +125,8 @@ export default function BookAParty() {
       <FareHarborBookingCTA
         headline="Ready to Party?"
         subtext="Book your group hot tub boat experience today."
-        buttonText="Book Your Party"
-      />
-    </div>
-  );
+        buttonText="Book Your Party" />
+      
+    </div>);
+
 }
