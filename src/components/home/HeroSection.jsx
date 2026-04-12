@@ -42,8 +42,8 @@ export default function HeroSection({ heroImage }) {
           <p className="font-body text-sea-salt/80 text-base md:text-xl max-w-xl mx-auto mb-4 leading-relaxed">A private hot tub boat experience on New Jersey Bay
 
           </p>
-          <p className="font-body text-mist-grey text-sm md:text-base max-w-md mx-auto mb-10">
-            90 minutes of luxury, relaxation, and unforgettable views
+          <p className="font-body text-mist-grey text-sm md:text-base max-w-md mx-auto mb-10">90 minutes of luxury, relaxation, and unforgettable views
+
           </p>
           <a
             href={FAREHARBOR_URL}
