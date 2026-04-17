@@ -64,13 +64,14 @@ module.exports = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        'deep-atlantic': '#1A3049',   /* deep bay navy                  */
-        'sea-salt': '#F4F8FA',        /* soft sandy white               */
-        'sky-horizon': '#1E7FA8',     /* bay teal — AA on white & sand  */
-        'mist-grey': '#7A95A8',       /* warm coastal slate             */
-        'seafoam': '#6DB8A8',         /* seafoam green accent           */
-        'sunrise': '#F07D2A',         /* warm sunrise amber             */
-        'sand': '#F0E8D8',            /* sandy neutral                  */
+        /* Named semantic colors — all reference CSS variables for full theme sync */
+        'deep-atlantic': 'hsl(var(--color-deep-atlantic))',
+        'sea-salt':      'hsl(var(--color-sea-salt))',
+        'sky-horizon':   'hsl(var(--color-sky-horizon))',
+        'mist-grey':     'hsl(var(--color-mist-grey))',
+        'seafoam':       'hsl(var(--color-seafoam))',
+        'sunrise':       'hsl(var(--color-sunrise))',
+        'sand':          'hsl(var(--color-sand))',
       },
       keyframes: {
         'accordion-down': {
@@ -82,9 +83,9 @@ module.exports = {
           to: { height: '0' },
         },
         'ripple': {
-          '0%': { boxShadow: '0 0 0 0 hsl(199 68% 36% / 0.4)' },
-          '70%': { boxShadow: '0 0 0 12px hsl(199 68% 36% / 0)' },
-          '100%': { boxShadow: '0 0 0 0 hsl(199 68% 36% / 0)' },
+          '0%': { boxShadow: '0 0 0 0 hsl(199 72% 38% / 0.4)' },
+          '70%': { boxShadow: '0 0 0 12px hsl(199 72% 38% / 0)' },
+          '100%': { boxShadow: '0 0 0 0 hsl(199 72% 38% / 0)' },
         },
       },
       animation: {

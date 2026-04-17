@@ -9,41 +9,50 @@
     --font-heading: 'Red Hat Display', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* ── Coastal Stone Harbor palette ── */
-    --background: 205 38% 96%;        /* soft sky-sand white        */
-    --foreground: 210 40% 14%;        /* deep bay navy (AA on bg)   */
-    --card: 0 0% 100%;                /* pure white cards           */
-    --card-foreground: 210 40% 14%;
+    /* ── Coastal Stone Harbor palette — bright & airy ── */
+    --background: 210 40% 97%;        /* near-white sky              */
+    --foreground: 210 35% 18%;        /* deep bay navy — AA on bg    */
+    --card: 0 0% 100%;                /* pure white cards            */
+    --card-foreground: 210 35% 18%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 14%;
-    --primary: 199 68% 36%;           /* bay teal — AA on white     */
+    --popover-foreground: 210 35% 18%;
+    --primary: 199 72% 38%;           /* bay teal — 4.6:1 on white   */
     --primary-foreground: 0 0% 100%;
-    --secondary: 168 28% 58%;         /* seafoam green              */
-    --secondary-foreground: 210 40% 14%;
-    --muted: 38 35% 93%;              /* warm sandy muted           */
-    --muted-foreground: 210 25% 42%;  /* slate — AA on muted        */
-    --accent: 28 88% 54%;             /* sunrise amber              */
+    --secondary: 168 35% 55%;         /* seafoam green               */
+    --secondary-foreground: 210 35% 18%;
+    --muted: 38 30% 93%;              /* pale warm sand              */
+    --muted-foreground: 210 22% 40%;  /* AA on sand & white          */
+    --accent: 28 85% 52%;             /* sunrise coral-amber         */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 205 28% 82%;            /* soft coastal border        */
-    --input: 205 28% 82%;
-    --ring: 199 68% 36%;
-    --chart-1: 199 68% 36%;
+    --border: 205 25% 85%;            /* very light coastal border   */
+    --input: 205 25% 85%;
+    --ring: 199 72% 38%;
+    --chart-1: 199 72% 38%;
     --chart-2: 168 40% 45%;
-    --chart-3: 28 88% 54%;
-    --chart-4: 210 40% 14%;
+    --chart-3: 28 85% 52%;
+    --chart-4: 210 35% 18%;
     --chart-5: 340 68% 52%;
     --radius: 0.5rem;
 
-    --sidebar-background: 205 38% 96%;
-    --sidebar-foreground: 210 40% 14%;
-    --sidebar-primary: 199 68% 36%;
+    /* Named semantic aliases used throughout components */
+    --color-deep-atlantic: 210 35% 18%;   /* = foreground              */
+    --color-sea-salt: 210 40% 97%;        /* = background              */
+    --color-sky-horizon: 199 72% 38%;     /* = primary                 */
+    --color-mist-grey: 210 22% 52%;       /* mid-tone coastal slate    */
+    --color-seafoam: 168 35% 55%;         /* = secondary               */
+    --color-sunrise: 28 85% 52%;          /* = accent                  */
+    --color-sand: 38 30% 93%;             /* = muted                   */
+
+    --sidebar-background: 210 40% 97%;
+    --sidebar-foreground: 210 35% 18%;
+    --sidebar-primary: 199 72% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 38 35% 93%;
-    --sidebar-accent-foreground: 210 40% 14%;
-    --sidebar-border: 205 28% 82%;
-    --sidebar-ring: 199 68% 36%;
+    --sidebar-accent: 38 30% 93%;
+    --sidebar-accent-foreground: 210 35% 18%;
+    --sidebar-border: 205 25% 85%;
+    --sidebar-ring: 199 72% 38%;
   }
 
   .dark {
@@ -83,12 +92,12 @@
 
   .light-theme {
     --background: 0 0% 100%;
-    --foreground: 210 40% 14%;
+    --foreground: 210 35% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 14%;
-    --muted: 38 35% 93%;
-    --muted-foreground: 210 25% 42%;
-    --border: 205 28% 82%;
+    --card-foreground: 210 35% 18%;
+    --muted: 38 30% 93%;
+    --muted-foreground: 210 22% 40%;
+    --border: 205 25% 85%;
   }
 }
 
@@ -111,12 +120,12 @@
     @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .glass-rule {
-    border-bottom: 0.5px solid hsl(205 28% 74%);
+    border-bottom: 0.5px solid hsl(205 25% 80%);
   }
   .glass-card {
-    background: hsl(0 0% 100% / 0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(205 28% 82% / 0.7);
+    background: hsl(0 0% 100% / 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid hsl(205 25% 85% / 0.8);
   }
 }
 
