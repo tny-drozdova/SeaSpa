@@ -64,10 +64,13 @@ module.exports = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        'deep-atlantic': '#0F172A',
-        'sea-salt': '#F8FAFC',
-        'sky-horizon': '#38BDF8',
-        'mist-grey': '#94A3B8',
+        'deep-atlantic': '#1A3049',   /* deep bay navy                  */
+        'sea-salt': '#F4F8FA',        /* soft sandy white               */
+        'sky-horizon': '#1E7FA8',     /* bay teal — AA on white & sand  */
+        'mist-grey': '#7A95A8',       /* warm coastal slate             */
+        'seafoam': '#6DB8A8',         /* seafoam green accent           */
+        'sunrise': '#F07D2A',         /* warm sunrise amber             */
+        'sand': '#F0E8D8',            /* sandy neutral                  */
       },
       keyframes: {
         'accordion-down': {
@@ -79,9 +82,9 @@ module.exports = {
           to: { height: '0' },
         },
         'ripple': {
-          '0%': { boxShadow: '0 0 0 0 hsl(199 89% 60% / 0.4)' },
-          '70%': { boxShadow: '0 0 0 12px hsl(199 89% 60% / 0)' },
-          '100%': { boxShadow: '0 0 0 0 hsl(199 89% 60% / 0)' },
+          '0%': { boxShadow: '0 0 0 0 hsl(199 68% 36% / 0.4)' },
+          '70%': { boxShadow: '0 0 0 12px hsl(199 68% 36% / 0)' },
+          '100%': { boxShadow: '0 0 0 0 hsl(199 68% 36% / 0)' },
         },
       },
       animation: {
