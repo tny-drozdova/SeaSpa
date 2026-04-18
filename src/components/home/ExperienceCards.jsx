@@ -27,7 +27,7 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText,
         <h3 className="font-heading text-2xl md:text-3xl font-light text-sea-salt mb-3">
           {title}
         </h3>
-        <p className="font-body text-mist-grey text-sm leading-relaxed mb-6 max-w-xs">
+        <p className="text-[hsl(var(--muted))] mb-6 text-sm font-body leading-relaxed max-w-xs">
           {description}
         </p>
         <Link
