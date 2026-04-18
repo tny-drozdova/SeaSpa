@@ -93,8 +93,8 @@ export default function RomanticSEOFeatures() {
                 <a
                 href={f.external ? f.ctaHref : undefined}
                 target={f.external ? "_blank" : undefined}
-                rel={f.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 font-body font-semibold text-sky-horizon text-sm hover:gap-3 transition-all focus-ring rounded-sm"
+                rel={f.external ? "noopener noreferrer" : undefined} className="text-sky-horizon text-sm font-semibold underline rounded-sm inline-flex items-center gap-2 hover:gap-3 transition-all focus-ring"
+
                 aria-label={f.cta}>
                 
                   {f.cta}
