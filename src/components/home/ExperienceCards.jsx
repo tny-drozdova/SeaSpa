@@ -65,7 +65,7 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <ExperienceCard
             image={romanticImage}
-            title="Private Hot Tub Boat in Stone Harbor, NJ"
+            title="Unique Experience in NJ"
             description="Family-friendly things to do that is fun, unique, and guaranteed to be one of the highlights of the summer."
             linkTo="/cruise-for-two"
             linkLabel="Explore the hot tub boat experience in Stone Harbor"
