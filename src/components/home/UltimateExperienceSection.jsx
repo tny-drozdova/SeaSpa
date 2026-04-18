@@ -28,12 +28,12 @@ export default function UltimateExperienceSection({ image }) {
 
 
             </h2>
-            <p className="text-[hsl(var(--sidebar-border))] mb-6 text-base font-body leading-relaxed">Summer in Wildwood hits different on the bay — especially when you’re steering your own hot tub boat. SeaSpa Cruises puts you in control of a private, 90-minute escape through calm waterways and marshland views.
+            <p className="text-[hsl(var(--border))] mb-6 text-base font-body leading-relaxed">Summer in Wildwood hits different on the bay — especially when you’re steering your own hot tub boat. SeaSpa Cruises puts you in control of a private, 90-minute escape through calm waterways and marshland views.
 
 
 
             </p>
-            <p className="text-mist-grey mb-10 text-base font-body leading-relaxed">No experience needed, just a driver’s license and a sense of fun.
+            <p className="text-[hsl(var(--border))] mb-10 text-base font-body leading-relaxed">No experience needed, just a driver’s license and a sense of fun.
 
 
             </p>
