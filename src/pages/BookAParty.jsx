@@ -36,7 +36,7 @@ export default function BookAParty() {
             
             <PartyPopper className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
-              id="party-hero-heading" className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6">Book a Party on the Bay
+              id="party-hero-heading" className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wide leading-tight mb-6">Book Your Party on the Bay
 
 
 
