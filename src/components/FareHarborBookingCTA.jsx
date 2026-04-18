@@ -24,7 +24,7 @@ export default function FareHarborBookingCTA({
           
           {headline}
         </h2>
-        <p className="text-[hsl(var(--background))] mb-10 text-lg font-body">
+        <p className="text-[hsl(var(--muted))] mb-10 text-lg font-body">
           {subtext}
         </p>
         <a
