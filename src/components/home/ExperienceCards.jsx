@@ -57,8 +57,8 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
             
             Every Occasion, One Bay
           </h2>
-          <p className="font-body text-mist-grey text-base md:text-lg max-w-xl mx-auto">
-            Whether it's a romantic escape or a celebration with your crew — we have the perfect cruise.
+          <p className="text-[hsl(var(--muted))] mx-auto text-base font-body md:text-lg max-w-xl">Whether it's a romantic escape or a celebration with your crew — we have the perfect cruise.
+
           </p>
         </div>
 
