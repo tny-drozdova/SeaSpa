@@ -37,7 +37,7 @@ export default function HeroSection({ heroImage }) {
             className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-sea-salt tracking-wider mb-6">
             
             <span className="block">Hot Tub. Open Bay. </span>
-            <span className="block font-semibold text-sky-horizon">SPA</span>
+            <span className="block font-semibold text-sky-horizon">You’re the Captain.</span>
           </h1>
           <p className="font-body text-sea-salt/80 text-base md:text-xl max-w-xl mx-auto mb-4 leading-relaxed">A private hot tub boat experience on New Jersey Bay
 
