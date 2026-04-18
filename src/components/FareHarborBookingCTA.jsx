@@ -34,7 +34,7 @@ export default function FareHarborBookingCTA({
           aria-label="Book your cruise via FareHarbor">
           
           <Button
-            size="lg" className="bg-[hsl(var(--color-sky-horizon))] text-[hsl(var(--foreground))] px-10 py-6 text-lg font-semibold rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 hover:ring-[3px] hover:ring-white focus-ring animate-ripple transition-all duration-200">
+            size="lg" className="bg-[hsl(var(--color-sky-horizon))] text-[hsl(var(--sidebar-primary-foreground))] px-10 py-6 text-lg font-semibold rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 hover:ring-[3px] hover:ring-white focus-ring animate-ripple transition-all duration-200">
 
             
             {buttonText}
