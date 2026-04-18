@@ -58,7 +58,7 @@ export default function UltimateExperienceSection({ image }) {
             className="relative">
             
             <div className="aspect-[3/2] rounded-lg overflow-hidden">
-              <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/f0e5df5d6_couple_in_hot_tub_boat_Stone_harbor_NJ.jpg"
+              <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/5583e456a_Friends_in_Tub.jpg"
 
               alt="Premium hot tub boat with crystal clear bubbling water, teak wood deck, and plush towels overlooking New Jersey Bay at sunset" className="w-full h-full object-cover"
 
