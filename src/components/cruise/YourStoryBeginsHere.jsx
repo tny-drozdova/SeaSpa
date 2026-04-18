@@ -69,13 +69,13 @@ export default function YourStoryBeginsHere() {
             {galleryImages.slice(1).map((img, i) =>
             <div key={i} className="flex flex-col">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
-                  <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width="600"
-                  height="337" />
+                  <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/352c83ad9_Couple.jpg"
+
+                alt={img.alt} className="w-full h-full object-cover"
+
+                loading="lazy"
+                width="600"
+                height="337" />
                 
                 </div>
                 {img.caption &&
