@@ -69,7 +69,7 @@ export default function YourStoryBeginsHere() {
             {galleryImages.slice(1).map((img, i) =>
             <div key={i} className="flex flex-col">
                 <div className="relative rounded-2xl overflow-hidden aspect-[16/9]">
-                  <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/352c83ad9_Couple.jpg"
+                  <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/f0e5df5d6_couple_in_hot_tub_boat_Stone_harbor_NJ.jpg"
 
                 alt={img.alt} className="w-full h-full object-cover"
 
