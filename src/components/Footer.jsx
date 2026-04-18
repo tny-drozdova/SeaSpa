@@ -20,9 +20,9 @@ const FacebookIcon = () => (
 );
 
 const footerLinks = [
-  { label: 'Experience', href: '/#experience' },
+  { label: 'Experiences', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
-  { label: 'Book a Party', href: '/book-a-party' },
+  { label: 'Group Celebrations', href: '/book-a-party' },
   { label: 'Blog', href: '/blog' },
   { label: 'Unique Experience in NJ', href: '/unique-experience-NJ' },
   { label: 'FAQ', href: '/#faq' },
@@ -53,9 +53,13 @@ export default function Footer() {
                 SEA<span className="font-semibold">SPA</span>
               </span>
             </Link>
-            <p className="text-mist-grey text-sm leading-relaxed max-w-xs">
+            <p className="text-mist-grey text-sm leading-relaxed max-w-xs mb-4">
               A luxury hot tub boat experience on New Jersey Bay. Making unforgettable memories on the water.
             </p>
+            <div className="text-mist-grey text-sm space-y-1">
+              <p>📍 708 W Burk Ave, Wildwood, NJ 08260</p>
+              <p>📞 <a href="tel:9999999999" className="hover:text-sky-horizon transition-colors">999-999-9999</a></p>
+            </div>
           </div>
 
           {/* Navigation */}

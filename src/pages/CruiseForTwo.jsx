@@ -55,26 +55,22 @@ export default function CruiseForTwo() {
           <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/70 via-deep-atlantic/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-lg">
+            className="flex flex-col items-center text-center max-w-2xl mx-auto">
             
             <Sparkles className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
-              id="romantic-hero-heading" className="text-sea-salt mb-6 text-4xl font-light text-center tracking-wider leading-tight sm:text-5xl md:text-6xl"
-
+              id="romantic-hero-heading" className="text-sea-salt mb-6 text-4xl font-light tracking-wider leading-tight sm:text-5xl md:text-6xl"
               style={{ letterSpacing: '0.08em' }}>
-              
               A Romantic Escape on the Water
             </h1>
-            <p className="text-sea-salt/80 mb-10 text-base font-body text-center leading-relaxed">An intimate 90-minute cruise for two — just you, the warm water, and the beauty of the bay.
-
-            </p>
+            <p className="text-sea-salt/80 mb-10 text-base font-body leading-relaxed">An intimate 90-minute cruise for two — just you, the warm water, and the beauty of the bay.</p>
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your romantic cruise via FareHarbor">
-              <Button size="lg" className="bg-sky-horizon text-deep-atlantic px-10 py-6 text-lg font-semibold text-center rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 focus-ring transition-all">
+              <Button size="lg" className="bg-sky-horizon text-deep-atlantic px-10 py-6 text-lg font-semibold rounded-md inline-flex items-center justify-center gap-2 shadow hover:bg-white hover:text-sky-horizon hover:border-[3px] hover:border-[#1697CA] focus-ring transition-all">
                 Plan Your Romantic Cruise
               </Button>
             </a>

@@ -19,8 +19,8 @@ export default function MapEmbed() {
 
         <div id="location-hot-tub-boat-NJ" className="rounded-lg overflow-hidden aspect-[16/9] md:aspect-[21/9]">
           <iframe
-            title="SeaSpa Cruises location on New Jersey Bay"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96906.63752382657!2d-74.10832924026445!3d40.693998736485574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250d225bfafdd%3A0x249f013a2cd25d9!2sJersey%20City%2C%20NJ!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            title="SeaSpa Cruises location - 708 W Burk Ave, Wildwood, NJ"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.123456789!2d-74.8330!3d38.9920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0c1a1a1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2s708%20W%20Burk%20Ave%2C%20Wildwood%2C%20NJ%2008260!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
             className="w-full h-full border-0"
             allowFullScreen
             loading="lazy"

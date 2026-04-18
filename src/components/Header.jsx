@@ -6,9 +6,8 @@ import { Button } from "@/components/ui/button";
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const navLinks = [
-  { label: 'Experience', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
-  { label: 'Cruise for Two', href: '/cruise-for-two' },
-  { label: 'Book a Party', href: '/book-a-party' },
+  { label: 'Experiences', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
+  { label: 'Group Celebrations', href: '/book-a-party' },
   { label: 'FAQ', href: '/#FAQ-hot-tub-boat-NJ' },
   { label: 'Find Us', href: '/#location-hot-tub-boat-NJ' },
   { label: 'About Us', href: '/#about-seaspacruises' },

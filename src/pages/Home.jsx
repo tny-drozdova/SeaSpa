@@ -6,8 +6,7 @@ import InstagramRibbon from '../components/home/InstagramRibbon';
 import FareHarborBookingCTA from '../components/FareHarborBookingCTA';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import FAQAccordion from '../components/home/FAQAccordion';
-import MapEmbed from '../components/home/MapEmbed';
-import ContactForm from '../components/home/ContactForm';
+import MapContactSection from '../components/home/MapContactSection';
 import AboutSection from '../components/home/AboutSection';
 
 const IMAGES = {
@@ -32,8 +31,7 @@ export default function Home() {
       />
       <TestimonialsSection />
       <FAQAccordion />
-      <MapEmbed />
-      <ContactForm />
+      <MapContactSection />
       <AboutSection />
     </>
   );
