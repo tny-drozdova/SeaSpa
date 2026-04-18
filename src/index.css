@@ -10,40 +10,40 @@
     --font-body: 'Inter', sans-serif;
 
     /* ── Coastal Stone Harbor palette — bright & airy ── */
-    --background: 210 40% 97%;        /* near-white sky              */
-    --foreground: 210 35% 18%;        /* deep bay navy — AA on bg    */
+    --background: 200 30% 96%;        /* soft sky-white              */
+    --foreground: 210 40% 15%;        /* deep bay navy               */
     --card: 0 0% 100%;                /* pure white cards            */
-    --card-foreground: 210 35% 18%;
+    --card-foreground: 210 40% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 35% 18%;
-    --primary: 199 72% 38%;           /* bay teal — 4.6:1 on white   */
+    --popover-foreground: 210 40% 15%;
+    --primary: 197 80% 44%;           /* bright bay teal             */
     --primary-foreground: 0 0% 100%;
-    --secondary: 168 35% 55%;         /* seafoam green               */
-    --secondary-foreground: 210 35% 18%;
-    --muted: 38 30% 93%;              /* pale warm sand              */
-    --muted-foreground: 210 22% 40%;  /* AA on sand & white          */
-    --accent: 28 85% 52%;             /* sunrise coral-amber         */
+    --secondary: 168 45% 50%;         /* vivid seafoam green         */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 200 25% 92%;             /* pale sky mist               */
+    --muted-foreground: 210 20% 42%;  /* readable coastal slate      */
+    --accent: 24 90% 55%;             /* bright sunrise coral        */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 205 25% 85%;            /* very light coastal border   */
-    --input: 205 25% 85%;
-    --ring: 199 72% 38%;
-    --chart-1: 199 72% 38%;
-    --chart-2: 168 40% 45%;
-    --chart-3: 28 85% 52%;
-    --chart-4: 210 35% 18%;
+    --border: 200 30% 82%;            /* light coastal border        */
+    --input: 200 30% 82%;
+    --ring: 197 80% 44%;
+    --chart-1: 197 80% 44%;
+    --chart-2: 168 45% 50%;
+    --chart-3: 24 90% 55%;
+    --chart-4: 210 40% 15%;
     --chart-5: 340 68% 52%;
     --radius: 0.5rem;
 
     /* Named semantic aliases used throughout components */
-    --color-deep-atlantic: 210 35% 18%;   /* = foreground              */
-    --color-sea-salt: 210 40% 97%;        /* = background              */
-    --color-sky-horizon: 199 72% 38%;     /* = primary                 */
-    --color-mist-grey: 210 22% 52%;       /* mid-tone coastal slate    */
-    --color-seafoam: 168 35% 55%;         /* = secondary               */
-    --color-sunrise: 28 85% 52%;          /* = accent                  */
-    --color-sand: 38 30% 93%;             /* = muted                   */
+    --color-deep-atlantic: 210 40% 15%;   /* = foreground              */
+    --color-sea-salt: 200 30% 96%;        /* = background              */
+    --color-sky-horizon: 197 80% 44%;     /* bright bay teal           */
+    --color-mist-grey: 210 20% 50%;       /* mid-tone coastal slate    */
+    --color-seafoam: 168 45% 50%;         /* vivid seafoam             */
+    --color-sunrise: 24 90% 55%;          /* bright sunrise coral      */
+    --color-sand: 200 25% 92%;            /* pale sky mist             */
 
     --sidebar-background: 210 40% 97%;
     --sidebar-foreground: 210 35% 18%;
@@ -56,28 +56,28 @@
   }
 
   .dark {
-    --background: 210 38% 12%;
-    --foreground: 205 38% 94%;
-    --card: 210 38% 16%;
-    --card-foreground: 205 38% 94%;
-    --popover: 210 38% 16%;
-    --popover-foreground: 205 38% 94%;
-    --primary: 199 72% 52%;
-    --primary-foreground: 210 38% 12%;
-    --secondary: 168 28% 48%;
-    --secondary-foreground: 205 38% 94%;
-    --muted: 210 38% 20%;
-    --muted-foreground: 205 28% 62%;
-    --accent: 28 88% 58%;
-    --accent-foreground: 210 38% 12%;
+    --background: 210 38% 10%;
+    --foreground: 200 30% 94%;
+    --card: 210 38% 14%;
+    --card-foreground: 200 30% 94%;
+    --popover: 210 38% 14%;
+    --popover-foreground: 200 30% 94%;
+    --primary: 197 80% 52%;
+    --primary-foreground: 210 38% 10%;
+    --secondary: 168 45% 44%;
+    --secondary-foreground: 200 30% 94%;
+    --muted: 210 38% 18%;
+    --muted-foreground: 205 28% 64%;
+    --accent: 24 90% 58%;
+    --accent-foreground: 210 38% 10%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 205 38% 94%;
-    --border: 210 28% 26%;
-    --input: 210 28% 26%;
-    --ring: 199 72% 52%;
-    --chart-1: 199 72% 52%;
-    --chart-2: 168 40% 45%;
-    --chart-3: 28 88% 54%;
+    --destructive-foreground: 200 30% 94%;
+    --border: 210 28% 24%;
+    --input: 210 28% 24%;
+    --ring: 197 80% 52%;
+    --chart-1: 197 80% 52%;
+    --chart-2: 168 45% 50%;
+    --chart-3: 24 90% 58%;
     --chart-4: 210 60% 60%;
     --chart-5: 340 68% 52%;
     --sidebar-background: 210 38% 12%;
