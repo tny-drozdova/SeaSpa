@@ -76,13 +76,13 @@ export default function HeroSection({ heroImage }) {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 border-2 border-sea-salt/40 rounded-full flex justify-center hidden">
-          
-          
-          <div className="w-1.5 h-3 bg-sea-salt/60 rounded-full mt-2" />
-        </motion.div>
+        
+
+
+
+
+
+        
       </div>
     </section>);
 
