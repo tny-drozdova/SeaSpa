@@ -9,8 +9,8 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6 }}
-      className="group relative overflow-hidden rounded-lg"
-    >
+      className="group relative overflow-hidden rounded-lg">
+      
       <div className="aspect-[4/5] md:aspect-[3/4]">
         <img
           src={image}
@@ -18,8 +18,8 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText,
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
           width="600"
-          height="800"
-        />
+          height="800" />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-deep-atlantic/90 via-deep-atlantic/30 to-transparent" />
       </div>
 
@@ -31,16 +31,16 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText,
           {description}
         </p>
         <Link
-          to={linkTo}
-          className="inline-flex items-center gap-2 text-sky-horizon font-body font-semibold text-sm tracking-wide hover:gap-3 transition-all duration-300 focus-ring rounded-sm"
-          aria-label={linkLabel}
-        >
+          to={linkTo} className="text-sky-horizon text-sm font-semibold underline tracking-wide rounded-sm inline-flex items-center gap-2 hover:gap-3 transition-all duration-300 focus-ring"
+
+          aria-label={linkLabel}>
+          
           {linkText}
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
-    </motion.div>
-  );
+    </motion.div>);
+
 }
 
 export default function ExperienceCards({ romanticImage, groupImage }) {
@@ -53,8 +53,8 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
           </p>
           <h2
             id="experiences-heading"
-            className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4"
-          >
+            className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4">
+            
             Every Occasion, One Bay
           </h2>
           <p className="font-body text-mist-grey text-base md:text-lg max-w-xl mx-auto">
@@ -71,8 +71,8 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
             linkLabel="Explore the hot tub boat experience in Stone Harbor"
             linkText="Unique Experience in NJ"
             linkTo="/stone-harbor-bay-experience"
-            altText="Couple enjoying a romantic hot tub boat cruise on New Jersey Bay at sunset"
-          />
+            altText="Couple enjoying a romantic hot tub boat cruise on New Jersey Bay at sunset" />
+          
           <ExperienceCard
             image={groupImage}
             title="Group Experience"
@@ -80,10 +80,10 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
             linkTo="/book-a-party"
             linkLabel="Plan your group party on the bay"
             linkText="Plan Your Party"
-            altText="Group of friends having fun on a hot tub boat party on New Jersey Bay"
-          />
+            altText="Group of friends having fun on a hot tub boat party on New Jersey Bay" />
+          
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
