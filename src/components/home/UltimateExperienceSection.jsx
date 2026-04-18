@@ -28,7 +28,7 @@ export default function UltimateExperienceSection({ image }) {
 
 
             </h2>
-            <p className="text-mist-grey mb-6 text-base font-body leading-relaxed">Drift across the stunning New Jersey Bay in your own private hot tub boat. Feel the warmth of the water as you take in panoramic views of the skyline, natural marshlands, and golden sunsets.
+            <p className="text-mist-grey mb-6 text-base font-body leading-relaxed">Summer in Wildwood hits different on the bay — especially when you’re steering your own hot tub boat. SeaSpa Cruises puts you in control of a private, 90-minute escape through calm waterways and marshland views. No experience needed, just a driver’s license and a sense of fun.
 
 
 
