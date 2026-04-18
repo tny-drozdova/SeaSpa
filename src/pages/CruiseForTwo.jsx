@@ -64,17 +64,17 @@ export default function CruiseForTwo() {
             
             <Sparkles className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
-              id="romantic-hero-heading"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl font-light text-sea-salt tracking-wider leading-tight mb-6"
+              id="romantic-hero-heading" className="text-sea-salt mb-6 text-4xl font-light text-center tracking-wider leading-tight sm:text-5xl md:text-6xl"
+
               style={{ letterSpacing: '0.08em' }}>
               
               A Romantic Escape on the Water
             </h1>
-            <p className="text-sea-salt/80 mb-10 text-base font-body leading-relaxed">An intimate 90-minute cruise for two — just you, the warm water, and the beauty of the bay.
+            <p className="text-sea-salt/80 mb-10 text-base font-body text-center leading-relaxed">An intimate 90-minute cruise for two — just you, the warm water, and the beauty of the bay.
 
             </p>
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your romantic cruise via FareHarbor">
-              <Button size="lg" className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg hover:bg-sky-horizon/90 focus-ring transition-all">
+              <Button size="lg" className="bg-sky-horizon text-deep-atlantic px-10 py-6 text-lg font-semibold text-center rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 focus-ring transition-all">
                 Plan Your Romantic Cruise
               </Button>
             </a>
