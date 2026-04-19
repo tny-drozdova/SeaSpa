@@ -68,6 +68,9 @@ export default function UltimateExperienceSection({ image }) {
               
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-sky-horizon/30 rounded-lg" aria-hidden="true" />
+            <p className="mt-6 text-mist-grey font-body text-sm leading-relaxed text-center italic">
+              A private hot tub boat on New Jersey Bay — warm water, open sky, and you at the helm.
+            </p>
           </motion.div>
         </div>
       </div>
