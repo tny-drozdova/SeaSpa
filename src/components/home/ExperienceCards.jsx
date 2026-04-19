@@ -43,7 +43,7 @@ function ExperienceCard({ image, title, description, linkTo, linkLabel, altText,
 
 }
 
-export default function ExperienceCards({ romanticImage, groupImage }) {
+export default function ExperienceCards({ romanticImage, groupImage, uniqueImage }) {
   return (
     <section className="py-24 md:py-40 bg-deep-atlantic glass-rule" aria-labelledby="experiences-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,36 +54,41 @@ export default function ExperienceCards({ romanticImage, groupImage }) {
           <h2
             id="experiences-heading"
             className="font-heading text-3xl md:text-5xl font-light text-sea-salt mb-4">
-            
             Every Occasion, One Bay
           </h2>
-          <p className="text-[hsl(var(--border))] mx-auto text-base font-body md:text-lg max-w-xl">Whether it's a romantic escape or a celebration with your crew — we have the perfect cruise.
-
+          <p className="text-[hsl(var(--border))] mx-auto text-base font-body md:text-lg max-w-xl">
+            Whether it's a romantic escape or a celebration with your crew — we have the perfect cruise.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           <ExperienceCard
             image={romanticImage}
-            title="Unique Experience in NJ"
-            description="Family-friendly things to do that is fun, unique, and guaranteed to be one of the highlights of the summer."
+            title="Cruise for Two"
+            description="Trade crowded dinners for a private soak on the bay. Just you, the water, and a view that keeps changing."
             linkTo="/cruise-for-two"
-            linkLabel="Explore the hot tub boat experience in Stone Harbor"
-            linkText="Unique Experience in NJ"
-            linkTo="/stone-harbor-bay-experience"
+            linkLabel="Explore romantic cruises for two"
+            linkText="Explore Romantic Cruises"
             altText="Couple enjoying a romantic hot tub boat cruise on New Jersey Bay at sunset" />
-          
+
           <ExperienceCard
             image={groupImage}
-            title="Group Experience"
-            description="Celebrate with friends — birthdays, bachelorettes, and every occasion worth remembering."
+            title="Group Celebrations"
+            description="Bring your crew, set the vibe, and take the wheel. It's your floating celebration — birthdays, bachelorettes, and every occasion worth remembering."
             linkTo="/book-a-party"
             linkLabel="Plan your group party on the bay"
             linkText="Plan Your Party"
             altText="Group of friends having fun on a hot tub boat party on New Jersey Bay" />
-          
+
+          <ExperienceCard
+            image={uniqueImage}
+            title="Unique NJ Experience"
+            description="There's nothing else like this in New Jersey. A hot tub you can drive, right here in Wildwood."
+            linkTo="/stone-harbor-bay-experience"
+            linkLabel="See what makes this a unique NJ experience"
+            linkText="See What Makes It Unique"
+            altText="Unique hot tub boat experience on Wildwood NJ bay" />
         </div>
       </div>
     </section>);
-
 }

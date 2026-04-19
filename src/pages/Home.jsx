@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <HeroSection heroImage={IMAGES.hero} />
       <UltimateExperienceSection image={IMAGES.ultimate} />
-      <ExperienceCards romanticImage={IMAGES.romantic} groupImage={IMAGES.group} />
+      <ExperienceCards romanticImage={IMAGES.romantic} groupImage={IMAGES.group} uniqueImage={IMAGES.ultimate} />
       <GoogleReviewCards />
       <InstagramRibbon />
       <FareHarborBookingCTA
