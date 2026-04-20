@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Anchor, Users, Wine, Thermometer } from "lucide-react";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+
+const highlights = [
+  { icon: Anchor,      label: "You Are The Captain" },
+  { icon: Users,       label: "Up to 6 Guests"      },
+  { icon: Wine,        label: "BYOB Welcome"         },
+  { icon: Thermometer, label: "Hot or Cold Tub"      },
+];
 
 export default function UltimateExperienceSection({ image }) {
   return (
@@ -23,20 +31,29 @@ export default function UltimateExperienceSection({ image }) {
               The Ultimate Bay Experience
             </p>
             <h2
-              id="ultimate-heading" className="font-heading text-3xl md:text-5xl font-light text-sea-salt leading-tight mb-8">Make the Summer You'll Never Forget
-
-
-
+              id="ultimate-heading" className="font-heading text-3xl md:text-5xl font-light text-sea-salt leading-tight mb-8">
+              Make the Summer You'll Never Forget
             </h2>
-            <p className="text-[hsl(var(--border))] mb-6 text-base font-body leading-relaxed">Summer in Wildwood hits different on the bay — especially when you’re steering your own hot tub boat. SeaSpa Cruises puts you in control of a private, 90-minute escape through calm waterways and marshland views.
-
-
-
+            <p className="text-[hsl(var(--border))] mb-6 text-base font-body leading-relaxed">
+              Summer in Wildwood hits different on the bay — especially when you're steering your own hot tub boat. SeaSpa Cruises puts you in control of a private, 90-minute escape through calm waterways and marshland views.
             </p>
-            <p className="text-[hsl(var(--border))] mb-10 text-base font-body leading-relaxed">No experience needed, just a driver’s license and a sense of fun.
-
-
+            <p className="text-[hsl(var(--border))] mb-8 text-base font-body leading-relaxed">
+              No experience needed, just a driver's license and a sense of fun.
             </p>
+
+            {/* Highlight mini-cards */}
+            <div className="grid grid-cols-2 gap-3 mb-10">
+              {highlights.map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-sky-horizon/40 bg-sky-horizon/10 hover:bg-sky-horizon/20 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-sky-horizon flex-shrink-0" aria-hidden="true" />
+                  <span className="font-body text-sea-salt text-sm font-semibold leading-snug">{label}</span>
+                </div>
+              ))}
+            </div>
+
             <a
               href={FAREHARBOR_URL}
               target="_blank"
@@ -59,13 +76,11 @@ export default function UltimateExperienceSection({ image }) {
             
             <div className="aspect-[3/2] rounded-lg overflow-hidden">
               <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/a0de96fb4_hot_tub_boat_party_New_Jersey.jpg"
-
-              alt="Premium hot tub boat with crystal clear bubbling water, teak wood deck, and plush towels overlooking New Jersey Bay at sunset" className="w-full h-full object-cover"
-
+              alt="Premium hot tub boat with crystal clear bubbling water, teak wood deck, and plush towels overlooking New Jersey Bay at sunset"
+              className="w-full h-full object-cover"
               loading="lazy"
               width="800"
               height="533" />
-              
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-sky-horizon/30 rounded-lg" aria-hidden="true" />
             <p className="mt-6 text-mist-grey font-body text-sm leading-relaxed text-center italic">
@@ -74,6 +89,6 @@ export default function UltimateExperienceSection({ image }) {
           </motion.div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
