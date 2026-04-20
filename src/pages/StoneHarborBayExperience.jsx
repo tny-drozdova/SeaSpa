@@ -2,39 +2,64 @@ import { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import UniquePageSidebar from '../components/unique/UniquePageSidebar';
+import { ArrowRight } from 'lucide-react';
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80";
+const CARD_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg";
 
 const cards = [
   {
+    id: "early-bird",
     time: "9:00 AM",
     label: "Early Bird Cruise",
+    tag: "Morning · Private",
     headline: "Start the Day on the Water",
-    body: "Slip out at 9:00 AM when the bay is glassy and calm. The air is fresh, the light is soft, and the pace feels unhurried — the kind of morning that sets the tone for the whole day. Coffee, conversation, and a private soak before the beach crowds even wake up.",
-    alt: "Calm Wildwood bay at early morning with soft golden light"
+    body: "Glassy bay, soft light, no crowds — the best-kept secret of a Wildwood morning.",
+    tags: ["90-min cruise", "Private boat", "From $149", "Up to 6 guests"],
+    alt: "Calm Wildwood bay at early morning with soft golden light",
+    emoji: "🌅",
   },
   {
+    id: "sunset-cruise",
     time: "8:00 PM",
     label: "Sunset Cruise",
+    tag: "Evening · Scenic",
     headline: "Golden Hour, Reimagined",
-    body: "At 8:00 PM, the sky puts on a show over the bay. Warm light stretches across the water as the sun drops behind the marshlands. It's quiet, cinematic, and just the right kind of unforgettable.",
-    alt: "Sunset over Wildwood NJ bay with warm golden reflections"
+    body: "The bay turns gold as the sun drops behind the marshlands — cinematic and unforgettable.",
+    tags: ["90-min cruise", "BYOB welcome", "From $149", "Up to 6 guests"],
+    alt: "Sunset over Wildwood NJ bay with warm golden reflections",
+    emoji: "🌇",
   },
   {
+    id: "romantic-date",
     time: "Evening",
-    label: "Date Night",
+    label: "Romantic Date",
+    tag: "Couples · Romantic",
     headline: "A Date Unlike Any Other",
-    body: "Trade the usual dinner-and-a-movie for something they'll actually remember. Warm water, a glowing bay sky, and the two of you — completely alone. It's effortlessly romantic without trying too hard.",
-    alt: "Romantic evening on New Jersey Bay with warm sunset light"
+    body: "Warm water, open sky, just the two of you. Effortlessly romantic without trying too hard.",
+    tags: ["Private cruise", "BYOB welcome", "From $149", "Just the two of you"],
+    alt: "Romantic evening on New Jersey Bay with warm sunset light",
+    emoji: "💑",
   },
   {
+    id: "private-fleet",
     time: "Any Time",
-    label: "Group Party",
+    label: "Private Fleet",
+    tag: "Groups · Celebration",
     headline: "The Send-Off She Deserves",
-    body: "Skip the predictable night out. Soak in the hot tub, pop the champagne, and cruise the bay with your squad. It's private, gorgeous, and completely unforgettable — just like the bride.",
-    alt: "Group of friends celebrating a bachelorette party on a boat"
+    body: "Your squad, your music, your champagne. The most unforgettable bachelorette on the bay.",
+    tags: ["Multiple boats", "BYOB welcome", "Group pricing", "Up to 18 guests"],
+    alt: "Group of friends celebrating a bachelorette party on a boat",
+    emoji: "🥂",
   }
+];
+
+const quickNavCards = [
+  { id: "early-bird",    emoji: "🌅", label: "Early Bird Cruise" },
+  { id: "sunset-cruise", emoji: "🌇", label: "Sunset Cruise"     },
+  { id: "romantic-date", emoji: "💑", label: "Romantic Date"     },
+  { id: "private-fleet", emoji: "🥂", label: "Private Fleet"     },
 ];
 
 export default function StoneHarborBayExperience() {
@@ -72,12 +97,14 @@ export default function StoneHarborBayExperience() {
       </div>
 
       {/* Main + sidebar layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
 
-          {/* Content: intro + cards (2 cols on desktop) */}
+          {/* Content column */}
           <div className="lg:col-span-2">
-            <div className="mb-10">
+
+            {/* Intro */}
+            <div className="mb-8">
               <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">One of a Kind</p>
               <h2 className="font-heading text-3xl md:text-4xl font-light text-deep-atlantic mb-4">Your Own Floating Spa</h2>
               <p className="font-body text-mist-grey text-base leading-relaxed">
@@ -85,50 +112,93 @@ export default function StoneHarborBayExperience() {
               </p>
             </div>
 
+            {/* Quick-nav strip — mobile first */}
+            <div className="grid grid-cols-2 gap-3 mb-10">
+              {quickNavCards.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="group flex items-center gap-3 px-4 py-3 rounded-xl border border-deep-atlantic/15 bg-white hover:border-sky-horizon/50 hover:shadow-sm transition-all focus-ring"
+                  aria-label={`Jump to ${item.label}`}
+                >
+                  <span className="text-xl leading-none flex-shrink-0" aria-hidden="true">{item.emoji}</span>
+                  <span className="font-body text-deep-atlantic text-sm font-semibold leading-snug group-hover:text-sky-horizon transition-colors">
+                    {item.label}
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+
+            {/* Experience cards */}
             <div className="space-y-8">
               {cards.map((card, i) => (
-                <motion.div
+                <motion.article
+                  id={card.id}
                   key={card.label}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="rounded-2xl overflow-hidden border border-deep-atlantic/8 bg-white shadow-sm"
+                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all"
                 >
+                  {/* Image */}
                   <div className="aspect-[16/9] overflow-hidden relative">
                     <img
-                      src="https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg"
+                      src={CARD_IMAGE}
                       alt={card.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                       width="800"
                       height="450"
                     />
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                      {/* Dark pill — high contrast: white text on near-black */}
-                      <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic text-white px-3 py-1 rounded-full">
-                        {card.time} · {card.label}
-                      </span>
-                      {/* Price pill — dark text on white: passes AA easily */}
-                      <span className="font-body text-xs font-semibold bg-white text-deep-atlantic px-3 py-1 rounded-full">
-                        From $149
+                    {/* Overlay tag */}
+                    <div className="absolute top-4 left-4">
+                      <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic/90 text-white px-3 py-1 rounded-full backdrop-blur-sm">
+                        {card.tag}
                       </span>
                     </div>
                   </div>
-                  <div className="p-8">
-                    <h3 className="font-heading text-2xl md:text-3xl font-light text-deep-atlantic mb-4">
+
+                  {/* Body */}
+                  <div className="p-6 sm:p-8">
+                    {/* Time label */}
+                    <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-3 block">
+                      {card.time} · {card.label}
+                    </span>
+
+                    <h3 className="font-heading text-2xl md:text-3xl font-light text-deep-atlantic mb-3 leading-snug group-hover:text-sky-horizon transition-colors">
                       {card.headline}
                     </h3>
-                    <p className="font-body text-mist-grey text-base leading-relaxed mb-6">
+                    <p className="font-body text-mist-grey text-base leading-relaxed mb-5">
                       {card.body}
                     </p>
-                    <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
-                      <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
-                        Book This Experience
-                      </Button>
-                    </a>
+
+                    {/* Trip detail tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {card.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="font-body text-xs font-medium text-deep-atlantic bg-sand border border-deep-atlantic/10 px-3 py-1 rounded-full"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Price + CTA row */}
+                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8">
+                      <p className="font-heading text-2xl font-light text-deep-atlantic">
+                        From <span className="font-semibold">$149</span>
+                      </p>
+                      <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
+                        <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
+                          Book Now
+                        </Button>
+                      </a>
+                    </div>
                   </div>
-                </motion.div>
+                </motion.article>
               ))}
             </div>
           </div>
