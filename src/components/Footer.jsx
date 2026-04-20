@@ -22,9 +22,9 @@ const FacebookIcon = () => (
 const footerLinks = [
   { label: 'Experiences', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
   { label: 'Cruise for Two', href: '/cruise-for-two' },
-  { label: 'Group Celebrations', href: '/book-a-party' },
+  { label: 'Group Celebrations', href: '/group-celebrations' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Unique Experience in NJ', href: '/unique-experience-NJ' },
+  { label: 'Unique Experiences', href: '/unique-experiences' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'About Us', href: '/#about-seaspa' },
 ];

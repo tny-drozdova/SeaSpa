@@ -84,7 +84,7 @@ export default function ExperienceCards({ romanticImage, groupImage, uniqueImage
             image={uniqueImage}
             title="Unique NJ Experience"
             description="There's nothing else like this in New Jersey. A hot tub you can drive, right here in Wildwood."
-            linkTo="/stone-harbor-bay-experience"
+            linkTo="/unique-experiences"
             linkLabel="See what makes this a unique NJ experience"
             linkText="See What Makes It Unique"
             altText="Unique hot tub boat experience on Wildwood NJ bay" />

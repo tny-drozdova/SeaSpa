@@ -4,23 +4,39 @@ import { motion } from "framer-motion";
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const cards = [
-{
-  time: "9:00 AM",
-  label: "Early Bird Cruise",
-  headline: "Start the Day on the Water",
-  body: "Slip out at 9:00 AM when the bay is glassy and calm. The air is fresh, the light is soft, and the pace feels unhurried — the kind of morning that sets the tone for the whole day. Coffee, conversation, and a private soak before the beach crowds even wake up.",
-  image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
-  alt: "Calm Wildwood bay at early morning with soft golden light"
-},
-{
-  time: "8:00 PM",
-  label: "Sunset Cruise",
-  headline: "Golden Hour, Reimagined",
-  body: "At 8:00 PM, the sky puts on a show over the bay. Warm light stretches across the water as the sun drops behind the marshlands. It's quiet, cinematic, and just the right kind of unforgettable.",
-  image: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800&q=80",
-  alt: "Sunset over Wildwood NJ bay with warm golden reflections"
-}];
-
+  {
+    time: "9:00 AM",
+    label: "Early Bird Cruise",
+    headline: "Start the Day on the Water",
+    body: "Slip out at 9:00 AM when the bay is glassy and calm. The air is fresh, the light is soft, and the pace feels unhurried — the kind of morning that sets the tone for the whole day. Coffee, conversation, and a private soak before the beach crowds even wake up.",
+    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
+    alt: "Calm Wildwood bay at early morning with soft golden light"
+  },
+  {
+    time: "8:00 PM",
+    label: "Sunset Cruise",
+    headline: "Golden Hour, Reimagined",
+    body: "At 8:00 PM, the sky puts on a show over the bay. Warm light stretches across the water as the sun drops behind the marshlands. It's quiet, cinematic, and just the right kind of unforgettable.",
+    image: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800&q=80",
+    alt: "Sunset over Wildwood NJ bay with warm golden reflections"
+  },
+  {
+    time: "Evening",
+    label: "Date Night",
+    headline: "A Date Unlike Any Other",
+    body: "Trade the usual dinner-and-a-movie for something they'll actually remember. Warm water, a glowing bay sky, and the two of you — completely alone. It's effortlessly romantic without trying too hard.",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    alt: "Romantic evening on New Jersey Bay with warm sunset light"
+  },
+  {
+    time: "Any Time",
+    label: "Bachelorette Party",
+    headline: "The Send-Off She Deserves",
+    body: "Skip the predictable night out. Soak in the hot tub, pop the champagne, and cruise the bay with your squad. It's private, gorgeous, and completely unforgettable — just like the bride.",
+    image: "https://images.unsplash.com/photo-1543965170-e399d7e6fc10?w=800&q=80",
+    alt: "Group of friends celebrating a bachelorette party on a boat"
+  },
+];
 
 export default function UniqueExperienceFeature() {
   return (
@@ -41,24 +57,24 @@ export default function UniqueExperienceFeature() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {cards.map((card, i) =>
-          <motion.div
-            key={card.label}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            className="rounded-2xl overflow-hidden border border-deep-atlantic/8 bg-white shadow-sm">
-            
+          {cards.map((card, i) => (
+            <motion.div
+              key={card.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="rounded-2xl overflow-hidden border border-deep-atlantic/8 bg-white shadow-sm"
+            >
               <div className="aspect-[16/9] overflow-hidden relative">
                 <img
-                src={card.image}
-                alt={card.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width="800"
-                height="450" />
-              
+                  src={card.image}
+                  alt={card.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="450"
+                />
                 <div className="absolute top-4 left-4">
                   <span className="font-body text-xs font-semibold tracking-widest uppercase bg-sky-horizon text-deep-atlantic px-3 py-1 rounded-full">
                     {card.time} · {card.label}
@@ -73,15 +89,15 @@ export default function UniqueExperienceFeature() {
                   {card.body}
                 </p>
                 <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
-                  <Button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-9 py-2 bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
+                  <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                     Book This Experience
                   </Button>
                 </a>
               </div>
             </motion.div>
-          )}
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

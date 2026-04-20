@@ -7,7 +7,7 @@ const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const navLinks = [
   { label: 'Experiences', href: '/#experiences-hot-tub-boat-stone-harbor-NJ' },
-  { label: 'Group Celebrations', href: '/book-a-party' },
+  { label: 'Group Celebrations', href: '/group-celebrations' },
   { label: 'FAQ', href: '/#FAQ-hot-tub-boat-NJ' },
   { label: 'Find Us', href: '/#location-hot-tub-boat-NJ' },
   { label: 'About Us', href: '/#about-seaspacruises' },

@@ -46,6 +46,7 @@ const AuthenticatedApp = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cruise-for-two" element={<CruiseForTwo />} />
         <Route path="/book-a-party" element={<BookAParty />} />
+        <Route path="/group-celebrations" element={<BookAParty />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/blog" element={<Blog />} />
@@ -53,6 +54,7 @@ const AuthenticatedApp = () => {
         <Route path="/blog/best-date-ideas-stone-harbor" element={<BestDateIdeasStoneHarbor />} />
         <Route path="/blog/top-things-to-do-wildwood-nj" element={<WildwoodTopActivities />} />
         <Route path="/unique-experience-NJ" element={<StoneHarborBayExperience />} />
+        <Route path="/unique-experiences" element={<StoneHarborBayExperience />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
