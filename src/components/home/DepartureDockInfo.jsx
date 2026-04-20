@@ -2,12 +2,10 @@ import { MapPin, Phone } from 'lucide-react';
 
 export default function DepartureDockInfo() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+    <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
       {/* Departure Dock */}
-      <div className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/10">
-        <div className="p-2.5 rounded-lg bg-sky-horizon/20 flex-shrink-0">
-          <MapPin className="w-5 h-5 text-sky-horizon" aria-hidden="true" />
-        </div>
+      <div className="flex items-start gap-3">
+        <MapPin className="w-5 h-5 text-sky-horizon flex-shrink-0 mt-0.5" aria-hidden="true" />
         <div>
           <p className="font-body text-sky-horizon text-xs font-semibold tracking-widest uppercase mb-1">
             Departure Dock
@@ -18,10 +16,8 @@ export default function DepartureDockInfo() {
       </div>
 
       {/* Text or Call */}
-      <div className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/10">
-        <div className="p-2.5 rounded-lg bg-sky-horizon/20 flex-shrink-0">
-          <Phone className="w-5 h-5 text-sky-horizon" aria-hidden="true" />
-        </div>
+      <div className="flex items-start gap-3">
+        <Phone className="w-5 h-5 text-sky-horizon flex-shrink-0 mt-0.5" aria-hidden="true" />
         <div>
           <p className="font-body text-sky-horizon text-xs font-semibold tracking-widest uppercase mb-1">
             Text or Call Us
