@@ -30,7 +30,7 @@ export default function BookAParty() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center text-center max-w-2xl mx-auto"
+            className="flex flex-col items-start text-left md:items-center md:text-center max-w-2xl"
           >
             <PartyPopper className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
@@ -44,7 +44,7 @@ export default function BookAParty() {
             </p>
 
             {/* Occasion pill labels */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <div className="flex flex-wrap justify-start md:justify-center gap-3 mb-10">
               {[
                 { label: "Birthday", emoji: "🎂" },
                 { label: "Bachelorette", emoji: "💅" },
@@ -106,11 +106,38 @@ export default function BookAParty() {
         </div>
       </section>
 
-      <FareHarborBookingCTA
-        headline="Ready to Party?"
-        subtext="Book your group hot tub boat experience today."
-        buttonText="Book Your Party"
-      />
+      {/* Ready to Party section with image */}
+      <section className="py-24 md:py-32 bg-deep-atlantic" aria-labelledby="ready-party-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 id="ready-party-heading" className="font-heading text-3xl md:text-5xl font-light text-sea-salt tracking-wide mb-6">
+            Ready to Party?
+          </h2>
+          <p className="text-[hsl(var(--border))] mb-10 text-lg font-body">
+            Book your group hot tub boat experience today.
+          </p>
+          <div className="w-full rounded-2xl overflow-hidden mb-10">
+            <img
+              src="https://media.base44.com/images/public/69d4989a834518931660bae7/69b76cc33_generated_image.png"
+              alt="Group of friends celebrating on a hot tub boat on New Jersey Bay at golden hour"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              width="1200"
+              height="600"
+            />
+          </div>
+          <a
+            href="#contact-us"
+            aria-label="Contact us to book your party"
+          >
+            <Button
+              size="lg"
+              className="bg-sky-horizon text-deep-atlantic px-10 py-6 text-lg font-semibold rounded-md inline-flex items-center justify-center gap-2 shadow h-10 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all duration-200"
+            >
+              Book Your Party
+            </Button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

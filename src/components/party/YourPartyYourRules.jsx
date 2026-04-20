@@ -7,48 +7,60 @@ const rules = [
   icon: Users,
   title: "Up to 6 Guests",
   description: "Bring your whole crew for a private 90-minute party — the entire boat is yours.",
-  accent: "bg-sky-horizon/10 border-sky-horizon/30",
-  iconColor: "text-sky-horizon"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 },
 {
   icon: Music,
   title: "Your Playlist",
   description: "Connect via Bluetooth and set the perfect vibe for your group. Your music, your rules.",
-  accent: "bg-secondary/10 border-secondary/30",
-  iconColor: "text-secondary"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 },
 {
   icon: Camera,
   title: "Photo-Worthy Views",
   description: "Every angle of the NJ Bay is Instagram gold — especially at golden hour.",
-  accent: "bg-accent/10 border-accent/30",
-  iconColor: "text-accent"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 },
 {
   icon: Sparkles,
   title: "BYOB & Bring Food",
   description: "We're BYOB-friendly. Bring champagne, drinks, snacks — whatever makes your party legendary.",
-  accent: "bg-sky-horizon/10 border-sky-horizon/30",
-  iconColor: "text-sky-horizon"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 },
 {
   icon: Anchor,
   title: "Licensed Captain",
   description: "Our licensed captain handles navigation so you can fully enjoy every moment.",
-  accent: "bg-secondary/10 border-secondary/30",
-  iconColor: "text-secondary"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 },
 {
   icon: Shield,
   title: "Fully Private",
   description: "No strangers, no shared spaces. The boat is exclusively yours for the full 90 minutes.",
-  accent: "bg-accent/10 border-accent/30",
-  iconColor: "text-accent"
+  iconBg: "bg-sky-horizon",
+  iconColor: "text-white"
 }];
 
 
 function RuleCard({ rule, index }) {
   const [expanded, setExpanded] = useState(false);
+  const [ripples, setRipples] = useState([]);
+
+  const handleClick = (e) => {
+    setExpanded(!expanded);
+    // Ripple on mobile
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const id = Date.now();
+    setRipples(prev => [...prev, { x, y, id }]);
+    setTimeout(() => setRipples(prev => prev.filter(r => r.id !== id)), 600);
+  };
 
   return (
     <motion.div
@@ -57,11 +69,20 @@ function RuleCard({ rule, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className={`rounded-2xl border p-6 md:p-7 transition-all duration-200 cursor-pointer md:cursor-default select-none ${rule.accent} hover:scale-[1.02] active:scale-[0.98]`}
-      onClick={() => setExpanded(!expanded)}>
+      className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 md:p-7 transition-all duration-200 cursor-pointer md:cursor-default select-none hover:bg-white/8 hover:scale-[1.02] active:scale-[0.98]"
+      onClick={handleClick}>
       
+      {/* Ripple effects (mobile) */}
+      {ripples.map(r => (
+        <span
+          key={r.id}
+          className="md:hidden pointer-events-none absolute rounded-full bg-sky-horizon/30 animate-ping"
+          style={{ left: r.x - 40, top: r.y - 40, width: 80, height: 80 }}
+        />
+      ))}
+
       <div className="flex items-start gap-4">
-        <div className={`p-2.5 rounded-xl bg-white/10 flex-shrink-0`}>
+        <div className={`p-3 rounded-xl ${rule.iconBg} flex-shrink-0 shadow-lg`}>
           <rule.icon className={`w-6 h-6 ${rule.iconColor}`} aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">

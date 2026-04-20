@@ -84,10 +84,30 @@ export default function Footer() {
 
           {/* Legal & Social */}
           <div>
+            {/* Follow Us — first on mobile, last on desktop */}
+            <div className="md:order-last">
+              <h3 className="font-body font-semibold text-sea-salt text-sm tracking-wider uppercase mb-4">
+                Follow Us
+              </h3>
+              <div className="flex gap-4 mb-8">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow us on ${social.label}`}
+                    className="text-mist-grey hover:text-sky-horizon transition-colors focus-ring rounded-sm p-1"
+                  >
+                    <social.icon />
+                  </a>
+                ))}
+              </div>
+            </div>
             <h3 className="font-body font-semibold text-sea-salt text-sm tracking-wider uppercase mb-4">
               Legal
             </h3>
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -99,23 +119,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <h3 className="font-body font-semibold text-sea-salt text-sm tracking-wider uppercase mb-4">
-              Follow Us
-            </h3>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Follow us on ${social.label}`}
-                  className="text-mist-grey hover:text-sky-horizon transition-colors focus-ring rounded-sm p-1"
-                >
-                  <social.icon />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
