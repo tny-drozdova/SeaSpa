@@ -82,7 +82,7 @@ function RuleCard({ rule, index }) {
 
 export default function YourPartyYourRules() {
   return (
-    <section className="bg-[hsl(var(--background))] py-24 md:py-40 glass-rule"
+    <section className="bg-[hsl(var(--foreground))] py-24 md:py-40 glass-rule"
 
     aria-labelledby="party-rules-heading">
       
