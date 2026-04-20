@@ -39,12 +39,12 @@ export default function HeroSection({ heroImage }) {
             <span className="block">Hot Tub. Open Bay. </span>
             <span className="block font-semibold text-sky-horizon">You’re the Captain.</span>
           </h1>
-          <p className="text-[hsl(var(--card))] mb-4 mx-auto text-base font-body leading-relaxed md:text-xl max-w-xl hidden">A private hot tub boat experience on New Jersey Bay
+          
 
-          </p>
-          <p className="text-[hsl(var(--border))] mb-10 mx-auto text-sm font-body md:text-base max-w-md hidden">90 minutes of luxury, relaxation, and unforgettable views
+          
+          
 
-          </p>
+          
           <a
             href={FAREHARBOR_URL}
             target="_blank"
