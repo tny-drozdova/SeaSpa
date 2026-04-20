@@ -1,13 +1,13 @@
-import MapEmbed from './MapEmbed';
 import ContactForm from './ContactForm';
+import DepartureDockInfo from './DepartureDockInfo';
 
 export default function MapContactSection() {
   return (
-    <section className="bg-deep-atlantic py-24 md:py-32" aria-label="Location and Contact">
+    <section id="contact-us" className="bg-deep-atlantic py-24 md:py-32" aria-label="Location and Contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop: side by side. Mobile: stacked */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Map on the left */}
+          {/* Map + dock info on the left */}
           <div>
             <div className="text-center lg:text-left mb-8">
               <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
@@ -16,8 +16,8 @@ export default function MapContactSection() {
               <h2 className="font-heading text-3xl md:text-4xl font-light text-sea-salt">
                 Set Sail From the Bay
               </h2>
-              <p className="font-body text-mist-grey text-sm mt-2">708 W Burk Ave, Wildwood, NJ 08260</p>
             </div>
+            <DepartureDockInfo />
             <div id="location-hot-tub-boat-NJ" className="rounded-lg overflow-hidden aspect-[4/3]">
               <iframe
                 title="SeaSpa Cruises location - 708 W Burk Ave, Wildwood, NJ"

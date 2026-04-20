@@ -30,7 +30,7 @@ export default function BookAParty() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-start text-left md:items-center md:text-center max-w-2xl">
+            className="flex flex-col items-start text-left max-w-2xl">
             
             <PartyPopper className="w-8 h-8 text-sky-horizon mb-6" aria-hidden="true" />
             <h1
@@ -44,7 +44,7 @@ export default function BookAParty() {
             </p>
 
             {/* Occasion pill labels */}
-            <div className="flex flex-wrap justify-start md:justify-center gap-3 mb-10">
+            <div className="flex flex-wrap justify-start gap-3 mb-10">
               {[
               { label: "Birthday", emoji: "🎂" },
               { label: "Bachelorette", emoji: "💅" },

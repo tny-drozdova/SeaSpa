@@ -48,19 +48,15 @@ export default function ContactForm({ inline = false }) {
 
   const formContent = (
     <>
-      <div className="text-center lg:text-left mb-8">
-        <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
-          Get in Touch
-        </p>
-        <h2 id="contact-heading" className="font-heading text-3xl md:text-4xl font-light text-sea-salt mb-2">
-          Contact Us
-        </h2>
-        <p className="text-mist-grey text-sm font-body">
-          Have questions or want to plan something special? Send us a message.
-        </p>
-      </div>
-
       <form onSubmit={handleSubmit} className="bg-muted rounded-lg p-5 sm:p-8 space-y-5" noValidate>
+        <div className="mb-2">
+          <h2 id="contact-heading" className="font-heading text-2xl md:text-3xl font-light text-sea-salt mb-1">
+            Contact Us
+          </h2>
+          <p className="text-sea-salt/70 text-sm font-body">
+            Have questions or want to plan something special? Send us a message.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <Label htmlFor="contact-name" className="font-body text-sea-salt text-sm mb-2 block">
@@ -146,7 +142,15 @@ export default function ContactForm({ inline = false }) {
     </>
   );
 
-  if (inline) return <div>{formContent}</div>;
+  const headerContent = (
+    <div className="text-center lg:text-left mb-8">
+      <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
+        Get in Touch
+      </p>
+    </div>
+  );
+
+  if (inline) return <div>{headerContent}{formContent}</div>;
 
   return (
     <section

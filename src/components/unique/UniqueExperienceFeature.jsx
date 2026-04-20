@@ -40,10 +40,10 @@ const cards = [
 
 export default function UniqueExperienceFeature() {
   return (
-    <section className="py-24 md:py-32 bg-sea-salt" aria-labelledby="unique-feature-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-0 bg-sea-salt" aria-labelledby="unique-feature-heading">
+      <div className="w-full">
         {/* Intro */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl text-left mb-12">
           <p className="font-body text-sky-horizon text-sm font-semibold tracking-widest uppercase mb-4">
             One of a Kind
           </p>
@@ -56,7 +56,7 @@ export default function UniqueExperienceFeature() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 gap-8">
           {cards.map((card, i) =>
           <motion.div
             key={card.label}
@@ -75,9 +75,12 @@ export default function UniqueExperienceFeature() {
               width="800"
               height="450" />
               
-                <div className="absolute top-4 left-4">
-                  <span className="font-body text-xs font-semibold tracking-widest uppercase bg-sky-horizon text-deep-atlantic px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic text-white px-3 py-1 rounded-full">
                     {card.time} · {card.label}
+                  </span>
+                  <span className="font-body text-xs font-semibold bg-white text-deep-atlantic px-3 py-1 rounded-full">
+                    From $149
                   </span>
                 </div>
               </div>
