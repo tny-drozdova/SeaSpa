@@ -5,7 +5,6 @@ import FareHarborBookingCTA from "../components/FareHarborBookingCTA";
 import YourPartyYourRules from "../components/party/YourPartyYourRules";
 import HotTubDataStats from "../components/party/HotTubDataStats";
 import WhatAreYouCelebrating from "../components/party/WhatAreYouCelebrating";
-import PerfectForEveryOccasion from "../components/party/PerfectForEveryOccasion";
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 const GROUP_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/58e1634bf_generated_4d1c9db8.png";
@@ -40,9 +39,33 @@ export default function BookAParty() {
             >
               Book Your Party On the Bay
             </h1>
-            <p className="text-sea-salt/80 mb-10 text-base font-body leading-relaxed">
+            <p className="text-sea-salt/80 mb-8 text-base font-body leading-relaxed">
               The ultimate group experience — a private hot tub boat celebration with your favorite people.
             </p>
+
+            {/* Occasion pill labels */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {[
+                { label: "Birthday", emoji: "🎂" },
+                { label: "Bachelorette", emoji: "💅" },
+                { label: "Family Time", emoji: "👨‍👩‍👧" },
+                { label: "Graduation", emoji: "🎓" },
+                { label: "Celebrations", emoji: "🥂" },
+              ].map(({ label, emoji }) => (
+                <a
+                  key={label}
+                  href={FAREHARBOR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Book for ${label} via FareHarbor`}
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-sea-salt text-sm font-body font-medium hover:bg-white/25 hover:border-white/50 active:scale-95 transition-all duration-200 focus-ring"
+                >
+                  <span aria-hidden="true">{emoji}</span>
+                  {label}
+                </a>
+              ))}
+            </div>
+
             <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your group party via FareHarbor">
               <Button size="lg" className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                 Book Your Party
@@ -54,9 +77,6 @@ export default function BookAParty() {
 
       {/* 2. Every Celebration Welcome */}
       <WhatAreYouCelebrating />
-
-      {/* 3. Perfect For Every Occasion */}
-      <PerfectForEveryOccasion />
 
       {/* 4. Hot Tub Data Cards */}
       <HotTubDataStats />
