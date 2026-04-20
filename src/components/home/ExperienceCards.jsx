@@ -75,7 +75,7 @@ export default function ExperienceCards({ romanticImage, groupImage, uniqueImage
             image={groupImage}
             title="Group Celebrations"
             description="Bring your crew, set the vibe, and take the wheel. It's your floating celebration — birthdays, bachelorettes, and every occasion worth remembering."
-            linkTo="/book-a-party"
+            linkTo="/group-celebrations"
             linkLabel="Plan your group party on the bay"
             linkText="Plan Your Party"
             altText="Group of friends having fun on a hot tub boat party on New Jersey Bay" />
