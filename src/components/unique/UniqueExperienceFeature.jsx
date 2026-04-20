@@ -50,8 +50,8 @@ export default function UniqueExperienceFeature() {
           <h2 id="unique-feature-heading" className="font-heading text-3xl md:text-5xl font-light text-deep-atlantic mb-6">
             Your Own Floating Spa
           </h2>
-          <p className="font-body text-mist-grey text-base md:text-lg leading-relaxed">
-            This isn't a boat tour — it's your own floating spa, and you're at the helm. Glide across Wildwood's back bay in warm water, surrounded by open sky and quiet marshlands. The motor is smooth and nearly silent, so all you hear is laughter, music, and the water around you. It's the Jersey Shore you know, seen from an entirely new angle.
+          <p className="font-body text-mist-grey text-base md:text-lg leading-relaxed">This isn't a boat tour — it's your own floating spa, and you're at the helm. Glide across Wildwood's back bay in warm water, surrounded by open sky and quiet marshlands. The motor is smooth and nearly silent, so all you hear is laughter, music, and the water around you. 
+
           </p>
         </div>
 
