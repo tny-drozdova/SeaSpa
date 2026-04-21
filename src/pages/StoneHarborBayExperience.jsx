@@ -112,8 +112,8 @@ export default function StoneHarborBayExperience() {
               </p>
             </div>
 
-            {/* Quick-nav strip — mobile first */}
-            <div className="grid grid-cols-2 gap-3 mb-10">
+            {/* Quick-nav strip — 2×2 on mobile, 4×1 on desktop */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
               {quickNavCards.map((item) => (
                 <a
                   key={item.id}
@@ -130,8 +130,8 @@ export default function StoneHarborBayExperience() {
               ))}
             </div>
 
-            {/* Experience cards — single col mobile, 2-col grid desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Experience cards — stacked on mobile, image-left on desktop */}
+            <div className="flex flex-col gap-6">
               {cards.map((card, i) => (
                 <motion.article
                   id={card.id}
@@ -140,10 +140,10 @@ export default function StoneHarborBayExperience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all flex flex-col"
+                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all flex flex-col lg:flex-row"
                 >
-                  {/* Image */}
-                  <div className="aspect-[16/9] overflow-hidden relative">
+                  {/* Image — top on mobile, left (fixed width) on desktop */}
+                  <div className="aspect-[16/9] lg:aspect-auto lg:w-64 xl:w-80 flex-shrink-0 overflow-hidden relative">
                     <img
                       src={CARD_IMAGE}
                       alt={card.alt}

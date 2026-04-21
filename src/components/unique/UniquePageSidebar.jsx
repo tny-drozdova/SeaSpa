@@ -35,13 +35,10 @@ export default function UniquePageSidebar() {
               <li key={article.title}>
                 <Link
                   to={article.href}
-                  className="group flex items-start gap-3 p-4 rounded-xl border border-deep-atlantic/10 bg-white hover:border-sky-horizon/40 hover:shadow-sm transition-all focus-ring"
+                  className="group flex items-start gap-2 py-1.5 focus-ring rounded-sm"
                 >
                   <ChevronRight className="w-4 h-4 text-sky-horizon flex-shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                  <div>
-                    <p className="font-body font-medium text-deep-atlantic text-sm group-hover:text-sky-horizon transition-colors">{article.title}</p>
-                    <p className="font-body text-mist-grey text-xs mt-1 leading-relaxed">{article.description}</p>
-                  </div>
+                  <p className="font-body font-medium text-deep-atlantic text-sm group-hover:text-sky-horizon transition-colors">{article.title}</p>
                 </Link>
               </li>
             ))}
