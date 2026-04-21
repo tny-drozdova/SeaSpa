@@ -37,21 +37,21 @@ function StatCard({ stat, index }) {
       transition={{ duration: 0.4, delay: index * 0.1 }}
       onMouseEnter={() => stat.isTemp && setHovered(true)}
       onMouseLeave={() => stat.isTemp && setHovered(false)}
-      className={`rounded-2xl border p-8 md:p-10 text-center flex flex-col items-center justify-center transition-all duration-300 cursor-default ${
+      className={`rounded-2xl border p-5 md:p-7 text-center flex flex-col items-center justify-center transition-all duration-300 cursor-default shadow-md ${
         stat.isTemp
           ? hovered
-            ? 'bg-sky-horizon/10 border-sky-horizon text-sky-horizon'
-            : 'bg-red-950/30 border-red-800/50'
+            ? 'bg-white border-sky-horizon shadow-sky-horizon/10'
+            : 'bg-white border-red-300'
           : 'bg-white border-transparent'
       }`}
       aria-label={stat.isTemp && hovered ? `${stat.hoverValue} ${stat.hoverLabel}` : `${stat.value} ${stat.label}`}
     >
       <span
-        className={`font-heading text-4xl md:text-5xl font-light mb-2 transition-colors duration-300 ${
+        className={`font-heading text-3xl md:text-4xl font-light mb-1.5 transition-colors duration-300 ${
           stat.isTemp
             ? hovered
               ? 'text-sky-horizon'
-              : 'text-red-400'
+              : 'text-red-600'
             : 'text-deep-atlantic'
         }`}
       >
@@ -61,8 +61,8 @@ function StatCard({ stat, index }) {
         className={`font-body text-xs font-semibold tracking-widest transition-colors duration-300 ${
           stat.isTemp
             ? hovered
-              ? 'text-sky-horizon/70'
-              : 'text-red-400/70'
+              ? 'text-sky-horizon'
+              : 'text-red-700'
             : 'text-mist-grey'
         }`}
       >
@@ -75,11 +75,11 @@ function StatCard({ stat, index }) {
 export default function HotTubDataStats() {
   return (
     <section
-      className="py-16 md:py-24 bg-deep-atlantic glass-rule"
+      className="py-16 md:py-20 bg-deep-atlantic glass-rule"
       aria-label="SeaSpa Cruises key facts"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} stat={stat} index={i} />
           ))}

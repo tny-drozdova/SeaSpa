@@ -125,13 +125,13 @@ export default function StoneHarborBayExperience() {
                   <span className="font-body text-deep-atlantic text-sm font-semibold leading-snug group-hover:text-sky-horizon transition-colors">
                     {item.label}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 </a>
               ))}
             </div>
 
-            {/* Experience cards */}
-            <div className="space-y-8">
+            {/* Experience cards — single col mobile, 2-col grid desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {cards.map((card, i) => (
                 <motion.article
                   id={card.id}
@@ -140,7 +140,7 @@ export default function StoneHarborBayExperience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all"
+                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all flex flex-col"
                 >
                   {/* Image */}
                   <div className="aspect-[16/9] overflow-hidden relative">
@@ -153,7 +153,7 @@ export default function StoneHarborBayExperience() {
                       height="450"
                     />
                     {/* Overlay tag */}
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-3 left-3">
                       <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic/90 text-white px-3 py-1 rounded-full backdrop-blur-sm">
                         {card.tag}
                       </span>
@@ -161,38 +161,38 @@ export default function StoneHarborBayExperience() {
                   </div>
 
                   {/* Body */}
-                  <div className="p-6 sm:p-8">
+                  <div className="p-5 sm:p-6 flex flex-col flex-1">
                     {/* Time label */}
-                    <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-3 block">
+                    <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-2 block">
                       {card.time} · {card.label}
                     </span>
 
-                    <h3 className="font-heading text-2xl md:text-3xl font-light text-deep-atlantic mb-3 leading-snug group-hover:text-sky-horizon transition-colors">
+                    <h3 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-2 leading-snug group-hover:text-sky-horizon transition-colors">
                       {card.headline}
                     </h3>
-                    <p className="font-body text-mist-grey text-base leading-relaxed mb-5">
+                    <p className="font-body text-mist-grey text-sm leading-relaxed mb-4">
                       {card.body}
                     </p>
 
                     {/* Trip detail tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-5">
                       {card.tags.map((t) => (
                         <span
                           key={t}
-                          className="font-body text-xs font-medium text-deep-atlantic bg-sand border border-deep-atlantic/10 px-3 py-1 rounded-full"
+                          className="font-body text-xs font-medium text-deep-atlantic bg-sand border border-deep-atlantic/10 px-2.5 py-1 rounded-full"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
 
-                    {/* Price + CTA row */}
-                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8">
-                      <p className="font-heading text-2xl font-light text-deep-atlantic">
+                    {/* Price + CTA row — pinned to bottom */}
+                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8 mt-auto">
+                      <p className="font-heading text-xl font-light text-deep-atlantic">
                         From <span className="font-semibold">$149</span>
                       </p>
                       <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
-                        <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
+                        <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-5 text-sm border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                           Book Now
                         </Button>
                       </a>
