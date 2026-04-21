@@ -144,7 +144,7 @@ export default function StoneHarborBayExperience() {
                 
                   {/* Image */}
                   <div className="aspect-[16/9] overflow-hidden relative">
-                    <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/2fffa4195_hot_tub_sunset.jpeg"
+                    <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg"
 
                   alt={card.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
 
