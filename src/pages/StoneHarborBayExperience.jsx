@@ -9,65 +9,65 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e
 const CARD_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg";
 
 const cards = [
-  {
-    id: "early-bird",
-    time: "9:00 AM",
-    label: "Early Bird Cruise",
-    tag: "Morning · Private",
-    headline: "Start the Day on the Water",
-    body: "Glassy bay, soft light, no crowds — the best-kept secret of a Wildwood morning.",
-    tags: ["90-min cruise", "Private boat", "From $149", "Up to 6 guests"],
-    alt: "Calm Wildwood bay at early morning with soft golden light",
-    emoji: "🌅",
-  },
-  {
-    id: "sunset-cruise",
-    time: "8:00 PM",
-    label: "Sunset Cruise",
-    tag: "Evening · Scenic",
-    headline: "Golden Hour, Reimagined",
-    body: "The bay turns gold as the sun drops behind the marshlands — cinematic and unforgettable.",
-    tags: ["90-min cruise", "BYOB welcome", "From $149", "Up to 6 guests"],
-    alt: "Sunset over Wildwood NJ bay with warm golden reflections",
-    emoji: "🌇",
-  },
-  {
-    id: "romantic-date",
-    time: "Evening",
-    label: "Romantic Date",
-    tag: "Couples · Romantic",
-    headline: "A Date Unlike Any Other",
-    body: "Warm water, open sky, just the two of you. Effortlessly romantic without trying too hard.",
-    tags: ["Private cruise", "BYOB welcome", "From $149", "Just the two of you"],
-    alt: "Romantic evening on New Jersey Bay with warm sunset light",
-    emoji: "💑",
-  },
-  {
-    id: "private-fleet",
-    time: "Any Time",
-    label: "Private Fleet",
-    tag: "Groups · Celebration",
-    headline: "The Send-Off She Deserves",
-    body: "Your squad, your music, your champagne. The most unforgettable bachelorette on the bay.",
-    tags: ["Multiple boats", "BYOB welcome", "Group pricing", "Up to 18 guests"],
-    alt: "Group of friends celebrating a bachelorette party on a boat",
-    emoji: "🥂",
-  }
-];
+{
+  id: "early-bird",
+  time: "9:00 AM",
+  label: "Early Bird Cruise",
+  tag: "Morning · Private",
+  headline: "Start the Day on the Water",
+  body: "Glassy bay, soft light, no crowds — the best-kept secret of a Wildwood morning.",
+  tags: ["90-min cruise", "Private boat", "From $149", "Up to 6 guests"],
+  alt: "Calm Wildwood bay at early morning with soft golden light",
+  emoji: "🌅"
+},
+{
+  id: "sunset-cruise",
+  time: "8:00 PM",
+  label: "Sunset Cruise",
+  tag: "Evening · Scenic",
+  headline: "Golden Hour, Reimagined",
+  body: "The bay turns gold as the sun drops behind the marshlands — cinematic and unforgettable.",
+  tags: ["90-min cruise", "BYOB welcome", "From $149", "Up to 6 guests"],
+  alt: "Sunset over Wildwood NJ bay with warm golden reflections",
+  emoji: "🌇"
+},
+{
+  id: "romantic-date",
+  time: "Evening",
+  label: "Romantic Date",
+  tag: "Couples · Romantic",
+  headline: "A Date Unlike Any Other",
+  body: "Warm water, open sky, just the two of you. Effortlessly romantic without trying too hard.",
+  tags: ["Private cruise", "BYOB welcome", "From $149", "Just the two of you"],
+  alt: "Romantic evening on New Jersey Bay with warm sunset light",
+  emoji: "💑"
+},
+{
+  id: "private-fleet",
+  time: "Any Time",
+  label: "Private Fleet",
+  tag: "Groups · Celebration",
+  headline: "The Send-Off She Deserves",
+  body: "Your squad, your music, your champagne. The most unforgettable bachelorette on the bay.",
+  tags: ["Multiple boats", "BYOB welcome", "Group pricing", "Up to 18 guests"],
+  alt: "Group of friends celebrating a bachelorette party on a boat",
+  emoji: "🥂"
+}];
+
 
 const quickNavCards = [
-  { id: "early-bird",    emoji: "🌅", label: "Early Bird Cruise" },
-  { id: "sunset-cruise", emoji: "🌇", label: "Sunset Cruise"     },
-  { id: "romantic-date", emoji: "💑", label: "Romantic Date"     },
-  { id: "private-fleet", emoji: "🥂", label: "Private Fleet"     },
-];
+{ id: "early-bird", emoji: "🌅", label: "Early Bird Cruise" },
+{ id: "sunset-cruise", emoji: "🌇", label: "Sunset Cruise" },
+{ id: "romantic-date", emoji: "💑", label: "Romantic Date" },
+{ id: "private-fleet", emoji: "🥂", label: "Private Fleet" }];
+
 
 export default function StoneHarborBayExperience() {
   useEffect(() => {
     document.title = "The Only Experience of Its Kind in New Jersey | SeaSpa Cruises Wildwood";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', 'A hot tub you can drive, set against Wildwood\'s summer bay. The most unique experience in New Jersey. Book your private cruise today.');
-    return () => { document.title = "SeaSpa Cruises | Hot Tub Boat Experience in NJ Bay"; };
+    return () => {document.title = "SeaSpa Cruises | Hot Tub Boat Experience in NJ Bay";};
   }, []);
 
   return (
@@ -112,48 +112,48 @@ export default function StoneHarborBayExperience() {
               </p>
             </div>
 
-            {/* Quick-nav strip — 2×2 on mobile, 4×1 on desktop */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
-              {quickNavCards.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="group flex items-center gap-3 px-4 py-3 rounded-xl border border-deep-atlantic/15 bg-white hover:border-sky-horizon/50 hover:shadow-sm transition-all focus-ring"
-                  aria-label={`Jump to ${item.label}`}
-                >
+            {/* Quick-nav strip — mobile first */}
+            <div className="grid grid-cols-2 gap-3 mb-10">
+              {quickNavCards.map((item) =>
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="group flex items-center gap-3 px-4 py-3 rounded-xl border border-deep-atlantic/15 bg-white hover:border-sky-horizon/50 hover:shadow-sm transition-all focus-ring"
+                aria-label={`Jump to ${item.label}`}>
+                
                   <span className="text-xl leading-none flex-shrink-0" aria-hidden="true">{item.emoji}</span>
                   <span className="font-body text-deep-atlantic text-sm font-semibold leading-snug group-hover:text-sky-horizon transition-colors">
                     {item.label}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 </a>
-              ))}
+              )}
             </div>
 
-            {/* Experience cards — stacked on mobile, image-left on desktop */}
-            <div className="flex flex-col gap-6">
-              {cards.map((card, i) => (
-                <motion.article
-                  id={card.id}
-                  key={card.label}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all flex flex-col lg:flex-row"
-                >
-                  {/* Image — top on mobile, left (fixed width) on desktop */}
-                  <div className="aspect-[16/9] lg:aspect-auto lg:w-64 xl:w-80 flex-shrink-0 overflow-hidden relative">
-                    <img
-                      src={CARD_IMAGE}
-                      alt={card.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      width="800"
-                      height="450"
-                    />
+            {/* Experience cards */}
+            <div className="space-y-8">
+              {cards.map((card, i) =>
+              <motion.article
+                id={card.id}
+                key={card.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all">
+                
+                  {/* Image */}
+                  <div className="aspect-[16/9] overflow-hidden relative">
+                    <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/2fffa4195_hot_tub_sunset.jpeg"
+
+                  alt={card.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+
+                  loading="lazy"
+                  width="800"
+                  height="450" />
+                  
                     {/* Overlay tag */}
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-4 left-4">
                       <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic/90 text-white px-3 py-1 rounded-full backdrop-blur-sm">
                         {card.tag}
                       </span>
@@ -161,45 +161,45 @@ export default function StoneHarborBayExperience() {
                   </div>
 
                   {/* Body */}
-                  <div className="p-5 sm:p-6 flex flex-col flex-1">
+                  <div className="p-6 sm:p-8">
                     {/* Time label */}
-                    <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-2 block">
+                    <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-3 block">
                       {card.time} · {card.label}
                     </span>
 
-                    <h3 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-2 leading-snug group-hover:text-sky-horizon transition-colors">
+                    <h3 className="font-heading text-2xl md:text-3xl font-light text-deep-atlantic mb-3 leading-snug group-hover:text-sky-horizon transition-colors">
                       {card.headline}
                     </h3>
-                    <p className="font-body text-mist-grey text-sm leading-relaxed mb-4">
+                    <p className="font-body text-mist-grey text-base leading-relaxed mb-5">
                       {card.body}
                     </p>
 
                     {/* Trip detail tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {card.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="font-body text-xs font-medium text-deep-atlantic bg-sand border border-deep-atlantic/10 px-2.5 py-1 rounded-full"
-                        >
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {card.tags.map((t) =>
+                    <span
+                      key={t}
+                      className="font-body text-xs font-medium text-deep-atlantic bg-sand border border-deep-atlantic/10 px-3 py-1 rounded-full">
+                      
                           {t}
                         </span>
-                      ))}
+                    )}
                     </div>
 
-                    {/* Price + CTA row — pinned to bottom */}
-                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8 mt-auto">
-                      <p className="font-heading text-xl font-light text-deep-atlantic">
+                    {/* Price + CTA row */}
+                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8">
+                      <p className="font-heading text-2xl font-light text-deep-atlantic">
                         From <span className="font-semibold">$149</span>
                       </p>
                       <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
-                        <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-5 text-sm border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
+                        <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                           Book Now
                         </Button>
                       </a>
                     </div>
                   </div>
                 </motion.article>
-              ))}
+              )}
             </div>
           </div>
 
@@ -207,6 +207,6 @@ export default function StoneHarborBayExperience() {
           <UniquePageSidebar />
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
