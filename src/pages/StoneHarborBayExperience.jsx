@@ -140,18 +140,15 @@ export default function StoneHarborBayExperience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all">
+                className="group rounded-2xl overflow-hidden border border-deep-atlantic/10 bg-white shadow-sm hover:shadow-md hover:border-sky-horizon/25 transition-all flex flex-col lg:flex-row">
                 
-                  {/* Image */}
-                  <div className="aspect-[16/9] overflow-hidden relative">
+                  {/* Image — full width on mobile, fixed left column on desktop */}
+                  <div className="aspect-[16/9] lg:aspect-auto lg:w-72 xl:w-80 flex-shrink-0 overflow-hidden relative">
                     <img src="https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg"
-
                   alt={card.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-
                   loading="lazy"
                   width="800"
                   height="450" />
-                  
                     {/* Overlay tag */}
                     <div className="absolute top-4 left-4">
                       <span className="font-body text-xs font-semibold tracking-widest uppercase bg-deep-atlantic/90 text-white px-3 py-1 rounded-full backdrop-blur-sm">
@@ -161,7 +158,7 @@ export default function StoneHarborBayExperience() {
                   </div>
 
                   {/* Body */}
-                  <div className="p-6 sm:p-8">
+                  <div className="p-6 sm:p-8 flex flex-col flex-1">
                     {/* Time label */}
                     <span className="font-body text-xs font-semibold tracking-widest uppercase text-sky-horizon mb-3 block">
                       {card.time} · {card.label}
@@ -187,7 +184,7 @@ export default function StoneHarborBayExperience() {
                     </div>
 
                     {/* Price + CTA row */}
-                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8">
+                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-deep-atlantic/8 mt-auto">
                       <p className="font-heading text-2xl font-light text-deep-atlantic">
                         From <span className="font-semibold">$149</span>
                       </p>
