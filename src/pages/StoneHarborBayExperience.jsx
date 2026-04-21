@@ -113,7 +113,7 @@ export default function StoneHarborBayExperience() {
             </div>
 
             {/* Quick-nav strip — mobile first */}
-            <div className="grid grid-cols-2 gap-3 mb-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
               {quickNavCards.map((item) =>
               <a
                 key={item.id}
