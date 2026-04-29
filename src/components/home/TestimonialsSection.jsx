@@ -43,7 +43,9 @@ export default function TestimonialsSection() {
               className="relative bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col gap-6"
             >
               {/* Large opening quote */}
-              <span className="font-heading text-7xl leading-none text-sky-horizon/40 select-none -mb-4" aria-hidden="true">"</span>
+              <div className="w-10 h-10 rounded-full bg-sky-horizon/15 border border-sky-horizon/30 flex items-center justify-center flex-shrink-0 -mb-2" aria-hidden="true">
+                <span className="font-heading text-2xl leading-none text-sky-horizon select-none" style={{ fontFamily: 'Georgia, serif' }}>"</span>
+              </div>
               <p className="font-body text-sea-salt text-base leading-relaxed flex-1">
                 {t.text}
               </p>

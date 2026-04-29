@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Heart, Sunset, Wine, Sparkles } from "lucide-react";
+import { Heart, Sunset, Wine, Sparkles, Gem, CalendarHeart, Flame } from "lucide-react";
+import { useState } from "react";
 import GiveThemAMoment from "../components/cruise/GiveThemAMoment";
 import YourStoryBeginsHere from "../components/cruise/YourStoryBeginsHere";
 import RomanticSEOFeatures from "../components/cruise/RomanticSEOFeatures";
@@ -17,26 +18,75 @@ const highlights = [
 
 const milestones = [
 {
-  number: "01",
+  icon: Flame,
   title: "Date Nights",
-  description: "Elevate your evening with an experience unlike any restaurant or rooftop. The bay at sunset is your backdrop."
+  description: "Elevate your evening with an experience unlike any restaurant or rooftop. The bay at sunset is your backdrop.",
+  accent: "bg-rose-500/10 border-rose-300/30",
+  iconBg: "bg-rose-500/15",
+  iconColor: "text-rose-500",
 },
 {
-  number: "02",
+  icon: Gem,
   title: "Proposals",
-  description: "Say yes surrounded by water, sky, and golden light. Our captain can help make it seamless and discreet."
+  description: "Say yes surrounded by water, sky, and golden light. Our captain can help make it seamless and discreet.",
+  accent: "bg-sky-horizon/8 border-sky-horizon/30",
+  iconBg: "bg-sky-horizon/15",
+  iconColor: "text-sky-horizon",
 },
 {
-  number: "03",
+  icon: CalendarHeart,
   title: "Anniversaries",
-  description: "Whether it's your first or your fiftieth — mark the milestone with an evening that feels as special as your love story."
-},
-{
-  number: "04",
-  title: "Honeymoons",
-  description: "Start your forever together on the bay. An intimate, private, and utterly romantic way to begin the next chapter."
+  description: "Whether it's your first or your fiftieth — mark the milestone with an evening that feels as special as your love story.",
+  accent: "bg-seafoam/8 border-seafoam/30",
+  iconBg: "bg-seafoam/15",
+  iconColor: "text-seafoam",
 }];
 
+
+function MilestoneCard({ milestone: m, index }) {
+  const [ripples, setRipples] = useState([]);
+
+  const handleClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const id = Date.now();
+    setRipples(prev => [...prev, { x, y, id }]);
+    setTimeout(() => setRipples(prev => prev.filter(r => r.id !== id)), 600);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.55, delay: index * 0.12 }}
+      onClick={handleClick}
+      className={`relative overflow-hidden rounded-2xl border p-8 text-center cursor-pointer select-none hover:shadow-lg transition-all duration-300 ${m.accent}`}
+    >
+      {/* Ripple effects */}
+      {ripples.map(r => (
+        <span
+          key={r.id}
+          className="pointer-events-none absolute rounded-full animate-ping"
+          style={{
+            left: r.x - 40, top: r.y - 40,
+            width: 80, height: 80,
+            background: 'hsl(197 80% 44% / 0.25)'
+          }}
+        />
+      ))}
+
+      {/* Icon */}
+      <div className={`w-14 h-14 rounded-2xl ${m.iconBg} flex items-center justify-center mx-auto mb-5`}>
+        <m.icon className={`w-7 h-7 ${m.iconColor}`} aria-hidden="true" />
+      </div>
+
+      <h3 className="font-heading text-2xl font-light text-deep-atlantic mb-3">{m.title}</h3>
+      <p className="font-body text-mist-grey text-sm leading-relaxed">{m.description}</p>
+    </motion.div>
+  );
+}
 
 export default function CruiseForTwo() {
   return (
@@ -112,7 +162,7 @@ export default function CruiseForTwo() {
 
       {/* Perfect for Every Milestone */}
       <section className="py-24 md:py-40 bg-white" aria-labelledby="milestones-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="font-body text-sky-horizon text-xs font-semibold tracking-widest uppercase mb-4">
               Perfect For
@@ -121,24 +171,9 @@ export default function CruiseForTwo() {
               Every Milestone
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {milestones.map((m, i) =>
-            <motion.div
-              key={m.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex gap-6 p-8 rounded-2xl border border-deep-atlantic/8 hover:border-sky-horizon/30 transition-colors">
-              
-                <span className="font-heading text-3xl font-light text-deep-atlantic/20 flex-shrink-0 leading-none">
-                  {m.number}
-                </span>
-                <div>
-                  <h3 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-2">{m.title}</h3>
-                  <p className="font-body text-mist-grey text-sm leading-relaxed">{m.description}</p>
-                </div>
-              </motion.div>
+            <MilestoneCard key={m.title} milestone={m} index={i} />
             )}
           </div>
         </div>

@@ -71,6 +71,16 @@ export default function BestDateIdeasStoneHarbor() {
         </div>
       </div>
 
+      {/* Back to blog */}
+      <div className="bg-deep-atlantic pb-6 px-4">
+        <div className="max-w-7xl mx-auto">
+          <Link to="/blog" className="inline-flex items-center gap-1.5 font-body text-sm text-mist-grey hover:text-sky-horizon transition-colors focus-ring rounded-sm">
+            <ChevronRight className="w-4 h-4 rotate-180" aria-hidden="true" />
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+
       {/* Main + sidebar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">

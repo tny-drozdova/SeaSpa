@@ -15,7 +15,7 @@ const InstagramIcon = () => (
 export default function InstagramRibbon() {
   return (
     <section
-      className="bg-deep-atlantic border-t border-b border-sea-salt/10 py-5"
+      className="bg-gradient-to-r from-sky-horizon/20 via-deep-atlantic to-sky-horizon/10 border-t-2 border-b-2 border-sky-horizon/40 py-6"
       aria-label="Follow us on Instagram"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

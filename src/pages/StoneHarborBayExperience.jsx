@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import UniquePageSidebar from '../components/unique/UniquePageSidebar';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 
 const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80";
@@ -125,7 +125,8 @@ export default function StoneHarborBayExperience() {
                   <span className="font-body text-deep-atlantic text-sm font-semibold leading-snug group-hover:text-sky-horizon transition-colors">
                     {item.label}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  {/* Always visible on mobile, fade-in on desktop hover */}
+                  <ChevronRight className="w-3.5 h-3.5 text-sky-horizon ml-auto flex-shrink-0 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 </a>
               )}
             </div>
