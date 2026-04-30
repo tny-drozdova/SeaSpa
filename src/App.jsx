@@ -15,7 +15,6 @@ import Blog from './pages/Blog';
 import StoneHarborBayExperience from './pages/StoneHarborBayExperience';
 import BestDateIdeasStoneHarbor from './pages/BestDateIdeasStoneHarbor';
 import WildwoodTopActivities from './pages/WildwoodTopActivities';
-import Booking from './pages/Booking';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -55,7 +54,6 @@ const AuthenticatedApp = () => {
         <Route path="/blog/top-things-to-do-wildwood-nj" element={<WildwoodTopActivities />} />
         <Route path="/unique-experience-NJ" element={<StoneHarborBayExperience />} />
         <Route path="/unique-experiences" element={<StoneHarborBayExperience />} />
-        <Route path="/booking" element={<Booking />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Lock, Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const FAREHARBOR_URL = "/booking";
+const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 const features = [
 {
@@ -92,7 +92,8 @@ export default function RomanticSEOFeatures() {
                 <p className="font-body text-mist-grey text-base leading-relaxed mb-6">{f.body2}</p>
                 <a
                 href={f.external ? f.ctaHref : undefined}
-                className="text-sky-horizon text-sm font-semibold underline rounded-sm inline-flex items-center gap-2 hover:gap-3 transition-all focus-ring"
+                target={f.external ? "_blank" : undefined}
+                rel={f.external ? "noopener noreferrer" : undefined} className="text-sky-horizon text-sm font-semibold underline rounded-sm inline-flex items-center gap-2 hover:gap-3 transition-all focus-ring"
 
                 aria-label={f.cta}>
                 

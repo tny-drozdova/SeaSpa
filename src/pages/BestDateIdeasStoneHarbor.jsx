@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const FAREHARBOR_URL = "/booking";
+const FAREHARBOR_URL = "/404";
 
 const ideas = [
   {

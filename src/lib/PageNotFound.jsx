@@ -3,7 +3,7 @@ import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
 import { Anchor, Home, ArrowLeft } from 'lucide-react';
 
-const FAREHARBOR_URL = "/booking";
+const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
 
 export default function PageNotFound() {
   const location = useLocation();

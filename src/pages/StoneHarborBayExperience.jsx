@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import UniquePageSidebar from '../components/unique/UniquePageSidebar';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
-const FAREHARBOR_URL = "/booking";
+const FAREHARBOR_URL = "/404";
 const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80";
 const CARD_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg";
 
