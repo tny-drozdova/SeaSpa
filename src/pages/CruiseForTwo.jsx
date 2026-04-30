@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback } from "react";
 import { Heart, Sunset, Wine, Sparkles, Gem, CalendarHeart, Flame, ChevronDown } from "lucide-react";
 import GiveThemAMoment from "../components/cruise/GiveThemAMoment";
 import YourStoryBeginsHere from "../components/cruise/YourStoryBeginsHere";
@@ -37,14 +38,37 @@ const milestones = [
 
 
 function MilestoneCard({ milestone: m, index }) {
+  const [ripples, setRipples] = useState([]);
+
+  const handleClick = useCallback((e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const id = Date.now();
+    setRipples(prev => [...prev, { x: e.clientX - rect.left, y: e.clientY - rect.top, id }]);
+    setTimeout(() => setRipples(prev => prev.filter(r => r.id !== id)), 800);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.55, delay: index * 0.13 }}
-      className="rounded-3xl border border-sky-horizon/20 bg-deep-atlantic p-6 sm:p-8 flex flex-col"
+      onClick={handleClick}
+      className="relative overflow-hidden rounded-3xl border border-sky-horizon/20 bg-deep-atlantic p-6 sm:p-8 flex flex-col cursor-pointer"
     >
+      <AnimatePresence>
+        {ripples.map(r => (
+          <motion.span
+            key={r.id}
+            className="pointer-events-none absolute rounded-full bg-sky-horizon/20"
+            style={{ left: r.x - 60, top: r.y - 60, width: 120, height: 120 }}
+            initial={{ scale: 0, opacity: 0.6 }}
+            animate={{ scale: 4, opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          />
+        ))}
+      </AnimatePresence>
       {/* Icon badge */}
       <div className="w-12 h-12 rounded-xl bg-sky-horizon/15 flex items-center justify-center mb-6">
         <m.icon className="w-6 h-6 text-sky-horizon" aria-hidden="true" />
