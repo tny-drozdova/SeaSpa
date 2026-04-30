@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 
 const sidebarArticles = [
   {
@@ -47,7 +47,7 @@ export default function UniquePageSidebar() {
         <div className="mt-8 p-6 rounded-xl bg-deep-atlantic text-center">
           <p className="font-heading text-xl font-light text-sea-salt mb-3">Ready to Book?</p>
           <p className="font-body text-mist-grey text-xs mb-4">Private cruises from $149</p>
-          <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer">
+          <a href={FAREHARBOR_URL}>
             <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold w-full hover:bg-sky-horizon/90 focus-ring">
               Book Now
             </Button>

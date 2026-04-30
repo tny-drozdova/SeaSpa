@@ -74,7 +74,7 @@ export default function BestDateIdeasStoneHarbor() {
 
 
       {/* Back to Blog */}
-      <div className="bg-deep-atlantic pb-6 px-4">
+      <div className="bg-sea-salt border-b border-deep-atlantic/10 py-4 px-4">
         <div className="max-w-7xl mx-auto">
           <Link to="/blog" className="inline-flex items-center gap-1.5 font-body text-sm text-mist-grey hover:text-sky-horizon hover:underline active:underline transition-colors focus-ring rounded-sm">
             <ChevronRight className="w-4 h-4 rotate-180 flex-shrink-0" aria-hidden="true" />
@@ -142,7 +142,7 @@ export default function BestDateIdeasStoneHarbor() {
               </nav>
               <div className="mt-8 p-6 rounded-xl bg-deep-atlantic text-center">
                 <p className="font-heading text-xl font-light text-sea-salt mb-3">Plan the Perfect Date</p>
-                <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer">
+                <a href={FAREHARBOR_URL}>
                   <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold w-full hover:bg-sky-horizon/90 focus-ring">Book Now</Button>
                 </a>
               </div>

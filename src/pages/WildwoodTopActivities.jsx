@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 
 const tips = [
   {
@@ -96,6 +96,16 @@ export default function WildwoodTopActivities() {
         </div>
       </div>
 
+      {/* Back to Blog */}
+      <div className="bg-sea-salt border-b border-deep-atlantic/10 py-4 px-4">
+        <div className="max-w-7xl mx-auto">
+          <Link to="/blog" className="inline-flex items-center gap-1.5 font-body text-sm text-mist-grey hover:text-sky-horizon hover:underline active:underline transition-colors focus-ring rounded-sm">
+            <ChevronRight className="w-4 h-4 rotate-180 flex-shrink-0" aria-hidden="true" />
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+
       {/* Main + Sidebar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -119,7 +129,7 @@ export default function WildwoodTopActivities() {
                     <h2 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-3">{tip.title}</h2>
                     <p className="font-body text-mist-grey text-base leading-relaxed">{tip.body}</p>
                     {tip.highlight && (
-                      <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-5" aria-label="Book a SeaSpa Cruise via FareHarbor">
+                      <a href={FAREHARBOR_URL} className="inline-block mt-5" aria-label="Book a SeaSpa Cruise via FareHarbor">
                         <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 py-3 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                           Book a SeaSpa Cruise
                         </Button>
@@ -155,7 +165,7 @@ export default function WildwoodTopActivities() {
               </nav>
               <div className="mt-8 p-6 rounded-xl bg-deep-atlantic text-center">
                 <p className="font-heading text-xl font-light text-sea-salt mb-3">Plan the Perfect Trip</p>
-                <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer">
+                <a href={FAREHARBOR_URL}>
                   <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold w-full hover:bg-sky-horizon/90 focus-ring">Book Now</Button>
                 </a>
               </div>

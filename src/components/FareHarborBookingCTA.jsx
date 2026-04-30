@@ -29,8 +29,6 @@ export default function FareHarborBookingCTA({
         </p>
         <a
           href={FAREHARBOR_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label="Book your cruise via FareHarbor">
           
           <Button

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const FAREHARBOR_URL = "/404";
 
+
 const celebrations = [
 {
   emoji: "🎂",

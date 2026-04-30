@@ -57,8 +57,6 @@ export default function PageNotFound() {
           </Link>
           <a
             href={FAREHARBOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-body font-semibold text-sea-salt border border-sea-salt/30 px-7 py-3 rounded-md hover:border-sky-horizon hover:text-sky-horizon transition-colors focus-ring"
           >
             Book a Cruise
