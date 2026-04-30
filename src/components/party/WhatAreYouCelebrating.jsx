@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 
 const celebrations = [
 {
@@ -97,8 +97,6 @@ export default function WhatAreYouCelebrating() {
                 </p>
                 <a
                 href={FAREHARBOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="font-body text-sky-horizon text-sm font-medium underline underline-offset-4 hover:text-sky-horizon/70 focus-ring rounded-sm transition-colors">
                 
                   {item.link}
@@ -112,9 +110,7 @@ export default function WhatAreYouCelebrating() {
         <div className="text-center mt-20">
           <a
             href={FAREHARBOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Start your celebration via FareHarbor">
+            aria-label="Start your celebration">
             
             <Button
               size="lg"

@@ -1,7 +1,7 @@
 import { Heart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 
 export default function GiveThemAMoment() {
   return (
@@ -35,9 +35,7 @@ export default function GiveThemAMoment() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
             href={FAREHARBOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Book your romantic cruise via FareHarbor">
+            aria-label="Book your romantic cruise">
             
             <Button
               size="lg" className="bg-[hsl(var(--primary))] text-deep-atlantic px-8 py-5 text-base font-semibold rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-10 hover:bg-sky-horizon/90 focus-ring transition-all">

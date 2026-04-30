@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import UniquePageSidebar from '../components/unique/UniquePageSidebar';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 const HERO_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80";
 const CARD_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/92833de5a_Smiles_n_sunshine.jpg";
 
@@ -87,7 +87,7 @@ export default function StoneHarborBayExperience() {
             <p className="font-body text-sea-salt/80 text-base md:text-xl leading-relaxed mb-10">
               A hot tub you can drive, set against Wildwood's summer bay.
             </p>
-            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your experience via FareHarbor">
+            <a href={FAREHARBOR_URL} aria-label="Book your experience">
               <Button size="lg" className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-10 py-6 text-lg border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                 Book Your Experience
               </Button>
@@ -189,7 +189,7 @@ export default function StoneHarborBayExperience() {
                       <p className="font-heading text-2xl font-light text-deep-atlantic">
                         From <span className="font-semibold">$149</span>
                       </p>
-                      <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label={`Book the ${card.label} via FareHarbor`}>
+                      <a href={FAREHARBOR_URL} aria-label={`Book the ${card.label}`}>
                         <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 border-[3px] border-transparent hover:bg-white hover:text-sky-horizon hover:border-[#1697CA] focus-ring transition-all">
                           Book Now
                         </Button>

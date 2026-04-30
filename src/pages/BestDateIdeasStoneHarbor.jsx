@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/404";
 
 const ideas = [
   {
@@ -73,6 +73,16 @@ export default function BestDateIdeasStoneHarbor() {
 
 
 
+      {/* Back to Blog */}
+      <div className="bg-deep-atlantic pb-6 px-4">
+        <div className="max-w-7xl mx-auto">
+          <Link to="/blog" className="inline-flex items-center gap-1.5 font-body text-sm text-mist-grey hover:text-sky-horizon hover:underline active:underline transition-colors focus-ring rounded-sm">
+            <ChevronRight className="w-4 h-4 rotate-180 flex-shrink-0" aria-hidden="true" />
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+
       {/* Main + sidebar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -96,7 +106,7 @@ export default function BestDateIdeasStoneHarbor() {
                     <h2 className="font-heading text-xl md:text-2xl font-light text-deep-atlantic mb-3">{idea.title}</h2>
                     <p className="font-body text-mist-grey text-base leading-relaxed">{idea.body}</p>
                     {idea.highlight && (
-                      <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-5">
+                      <a href={FAREHARBOR_URL} className="inline-block mt-5">
                         <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-6 py-3 hover:bg-sky-horizon/90 focus-ring">
                           Book a SeaSpa Cruise
                         </Button>
