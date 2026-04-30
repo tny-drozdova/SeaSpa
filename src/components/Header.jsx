@@ -40,6 +40,7 @@ export default function Header() {
   };
 
   return (
+    <>
     <header
       role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -102,18 +103,39 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {/* Mobile Menu — full viewport overlay */}
+    </header>
+
+      {/* Mobile Menu — full viewport overlay, outside <header> so z-index works correctly */}
       {mobileOpen && (
         <div
           id="mobile-menu"
           role="navigation"
           aria-label="Mobile navigation"
-          className="lg:hidden fixed inset-0 z-40 bg-deep-atlantic flex flex-col"
+          className="lg:hidden fixed inset-0 z-50 bg-deep-atlantic flex flex-col"
         >
-          {/* Top bar spacer to clear the header */}
-          <div className="h-16" />
+          {/* Top bar: Logo (left) + Close (right) */}
+          <div className="flex items-center justify-between px-4 h-16 flex-shrink-0 border-b border-sea-salt/10">
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 focus-ring rounded-sm"
+              aria-label="SeaSpa Cruises home"
+            >
+              <Anchor className="w-6 h-6 text-sky-horizon" aria-hidden="true" />
+              <span className="font-heading text-xl font-light text-sea-salt tracking-wider">
+                SEA<span className="font-semibold">SPA</span>
+              </span>
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="text-sea-salt p-2 focus-ring rounded-sm"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
 
-          {/* Nav links */}
+          {/* Nav links — scrollable middle */}
           <div className="flex flex-col gap-1 px-4 pt-6 flex-1 overflow-y-auto">
             {navLinks.map((link) => (
               <Link
@@ -127,9 +149,9 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Pinned CTA at bottom */}
-          <div className="px-4 py-6 border-t border-sea-salt/10">
-            <a href="/404" aria-label="Book your cruise" className="block">
+          {/* Pinned CTA at very bottom */}
+          <div className="px-4 py-6 border-t border-sea-salt/10 flex-shrink-0">
+            <a href={FAREHARBOR_URL} aria-label="Book your cruise" className="block">
               <Button className="w-full bg-sky-horizon text-deep-atlantic font-body font-semibold text-base py-4 h-auto hover:bg-sky-horizon/90 focus-ring">
                 Book Now
               </Button>
@@ -137,6 +159,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
