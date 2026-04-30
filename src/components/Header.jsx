@@ -40,7 +40,6 @@ export default function Header() {
   };
 
   return (
-    <>
     <header
       role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -103,15 +102,13 @@ export default function Header() {
           </div>
         </div>
       </nav>
-    </header>
-
-      {/* Mobile Menu — full viewport overlay, rendered outside <header> so z-index stacks correctly */}
+      {/* Mobile Menu — full viewport overlay */}
       {mobileOpen && (
         <div
           id="mobile-menu"
           role="navigation"
           aria-label="Mobile navigation"
-          className="lg:hidden fixed inset-0 z-50 bg-deep-atlantic flex flex-col"
+          className="lg:hidden fixed inset-0 z-40 bg-deep-atlantic flex flex-col"
         >
           {/* Top bar spacer to clear the header */}
           <div className="h-16" />
@@ -132,7 +129,7 @@ export default function Header() {
 
           {/* Pinned CTA at bottom */}
           <div className="px-4 py-6 border-t border-sea-salt/10">
-            <a href={FAREHARBOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Book your cruise" className="block">
+            <a href="/404" aria-label="Book your cruise" className="block">
               <Button className="w-full bg-sky-horizon text-deep-atlantic font-body font-semibold text-base py-4 h-auto hover:bg-sky-horizon/90 focus-ring">
                 Book Now
               </Button>
@@ -140,6 +137,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </>
+    </header>
   );
 }
