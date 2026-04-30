@@ -90,16 +90,6 @@ export default function Header() {
 
           {/* Mobile toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            <a
-              href={FAREHARBOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book your cruise via FareHarbor"
-            >
-              <Button size="sm" className="bg-sky-horizon text-deep-atlantic font-body font-semibold text-xs px-4 hover:bg-sky-horizon/90 focus-ring">
-                Book Now
-              </Button>
-            </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="text-sea-salt p-2 focus-ring rounded-sm"
@@ -111,25 +101,42 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div id="mobile-menu" role="navigation" aria-label="Mobile navigation" className="lg:hidden pb-6 border-t border-sea-salt/10">
-            <div className="flex flex-col gap-1 pt-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-sea-salt/80 hover:text-sky-horizon hover:bg-sea-salt/5 px-4 py-3 rounded-md text-base font-body font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-horizon"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </nav>
+      {/* Mobile Menu — full viewport overlay */}
+      {mobileOpen && (
+        <div
+          id="mobile-menu"
+          role="navigation"
+          aria-label="Mobile navigation"
+          className="lg:hidden fixed inset-0 z-40 bg-deep-atlantic flex flex-col"
+        >
+          {/* Top bar spacer to clear the header */}
+          <div className="h-16" />
+
+          {/* Nav links */}
+          <div className="flex flex-col gap-1 px-4 pt-6 flex-1 overflow-y-auto">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="text-sea-salt/80 hover:text-sky-horizon hover:bg-sea-salt/5 px-4 py-4 rounded-md text-lg font-body font-medium tracking-wide transition-colors border-b border-sea-salt/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-horizon"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Pinned CTA at bottom */}
+          <div className="px-4 py-6 border-t border-sea-salt/10">
+            <a href="/404" aria-label="Book your cruise" className="block">
+              <Button className="w-full bg-sky-horizon text-deep-atlantic font-body font-semibold text-base py-4 h-auto hover:bg-sky-horizon/90 focus-ring">
+                Book Now
+              </Button>
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
