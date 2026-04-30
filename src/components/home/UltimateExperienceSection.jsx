@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Anchor, Users, Wine, Thermometer } from "lucide-react";
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/booking";
 
 const highlights = [
   { icon: Anchor,      label: "You Are The Captain" },
@@ -56,8 +56,6 @@ export default function UltimateExperienceSection({ image }) {
 
             <a
               href={FAREHARBOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label="Book your cruise via FareHarbor">
               
               <Button className="bg-sky-horizon text-deep-atlantic font-body font-semibold px-8 py-5 hover:bg-sky-horizon/90 focus-ring transition-all">

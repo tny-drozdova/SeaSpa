@@ -6,7 +6,7 @@ import GiveThemAMoment from "../components/cruise/GiveThemAMoment";
 import YourStoryBeginsHere from "../components/cruise/YourStoryBeginsHere";
 import RomanticSEOFeatures from "../components/cruise/RomanticSEOFeatures";
 
-const FAREHARBOR_URL = "/404";
+const FAREHARBOR_URL = "/booking";
 
 const HERO_IMAGE = "https://media.base44.com/images/public/69d4989a834518931660bae7/5a20b1156_generated_24563928.png";
 
@@ -21,48 +21,46 @@ const milestones = [
   icon: Flame,
   title: "Date Nights",
   tagline: "Romantic · Evening",
-  description: "Elevate your evening with an experience unlike any restaurant or rooftop. The bay at sunset is your backdrop.",
-  accent: "bg-rose-50 border-rose-200",
-  iconBg: "bg-rose-100",
-  iconColor: "text-rose-500",
-  barColor: "bg-rose-400",
-  rippleColor: "hsl(350 80% 60%)",
+  description: "Elevate your evening with an experience unlike any restaurant or rooftop.",
 },
 {
   icon: Gem,
   title: "Proposals",
   tagline: "Once in a lifetime",
-  description: "Say yes surrounded by water, sky, and golden light. Our captain can help make it seamless and discreet.",
-  accent: "bg-sky-50 border-sky-200",
-  iconBg: "bg-sky-100",
-  iconColor: "text-sky-horizon",
-  barColor: "bg-sky-horizon",
-  rippleColor: "hsl(197 80% 44%)",
+  description: "Say yes surrounded by water, sky, and golden light.",
 },
 {
   icon: CalendarHeart,
   title: "Anniversaries",
   tagline: "Celebrate your love",
-  description: "Whether it's your first or your fiftieth — mark the milestone with an evening that feels as special as your love story.",
-  accent: "bg-teal-50 border-teal-200",
-  iconBg: "bg-teal-100",
-  iconColor: "text-teal-600",
-  barColor: "bg-teal-500",
-  rippleColor: "hsl(168 45% 50%)",
+  description: "Mark the milestone with an evening as special as your love story.",
 }];
 
 
-function WaveRipple({ x, y, color }) {
+function WaterRipple({ x, y }) {
   return (
     <>
-      {[0, 1, 2].map(i => (
+      {[0, 1, 2, 3].map(i => (
         <motion.span
           key={i}
-          className="pointer-events-none absolute rounded-full"
-          style={{ left: x - 60, top: y - 60, width: 120, height: 120, background: color, opacity: 0.3 }}
-          initial={{ scale: 0, opacity: 0.4 }}
-          animate={{ scale: 2.5 + i * 0.8, opacity: 0 }}
-          transition={{ duration: 0.9 + i * 0.2, delay: i * 0.15, ease: 'easeOut' }}
+          className="pointer-events-none absolute rounded-full border border-sky-horizon/40"
+          style={{
+            left: x,
+            top: y,
+            width: 0,
+            height: 0,
+            transform: 'translate(-50%, -50%)',
+          }}
+          animate={{
+            width: [0, 80 + i * 40],
+            height: [0, 80 + i * 40],
+            opacity: [0.5, 0],
+          }}
+          transition={{
+            duration: 1.2 + i * 0.2,
+            delay: i * 0.18,
+            ease: [0.2, 0.6, 0.4, 1],
+          }}
         />
       ))}
     </>
@@ -71,7 +69,6 @@ function WaveRipple({ x, y, color }) {
 
 function MilestoneCard({ milestone: m, index }) {
   const [ripples, setRipples] = useState([]);
-  const [expanded, setExpanded] = useState(false);
 
   const handlePress = useCallback((e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -79,80 +76,36 @@ function MilestoneCard({ milestone: m, index }) {
     const y = e.clientY - rect.top;
     const id = Date.now();
     setRipples(prev => [...prev, { x, y, id }]);
-    setTimeout(() => setRipples(prev => prev.filter(r => r.id !== id)), 1200);
-    setExpanded(v => !v);
+    setTimeout(() => setRipples(prev => prev.filter(r => r.id !== id)), 1600);
   }, []);
-
-  const rippleColor = m.rippleColor || 'hsl(197 80% 44%)';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.55, delay: index * 0.13 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       onClick={handlePress}
-      role="button"
-      aria-expanded={expanded}
       tabIndex={0}
       onKeyDown={e => e.key === 'Enter' && handlePress(e)}
-      className={`relative overflow-hidden rounded-3xl border-2 cursor-pointer select-none transition-all duration-300 group ${m.accent}`}
+      className="relative overflow-hidden rounded-2xl border border-sky-horizon/20 bg-white cursor-pointer select-none group transition-shadow duration-300 hover:shadow-md"
       style={{ WebkitTapHighlightColor: 'transparent' }}
     >
-      {/* Wave ripples */}
       <AnimatePresence>
-        {ripples.map(r => (
-          <WaveRipple key={r.id} x={r.x} y={r.y} color={rippleColor} />
-        ))}
+        {ripples.map(r => <WaterRipple key={r.id} x={r.x} y={r.y} />)}
       </AnimatePresence>
 
-      {/* Top accent bar */}
-      <div className={`h-1.5 w-full ${m.barColor}`} aria-hidden="true" />
-
-      <div className="p-6 sm:p-8 flex flex-col items-center text-center">
-        {/* Icon badge */}
-        <div className={`w-16 h-16 rounded-2xl ${m.iconBg} flex items-center justify-center mb-5 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-          <m.icon className={`w-8 h-8 ${m.iconColor}`} aria-hidden="true" />
+      <div className="p-5 sm:p-6 flex items-center gap-4">
+        <div className="w-11 h-11 rounded-xl bg-sky-horizon/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-horizon/20 transition-colors duration-300">
+          <m.icon className="w-5 h-5 text-sky-horizon" aria-hidden="true" />
         </div>
-
-        <h3 className="font-heading text-xl sm:text-2xl font-semibold text-deep-atlantic mb-2 tracking-wide">
-          {m.title}
-        </h3>
-
-        {/* Always visible summary */}
-        <p className="font-body text-mist-grey text-xs uppercase tracking-widest font-semibold mb-3">
-          {m.tagline}
-        </p>
-
-        {/* Expandable description — always visible on md+, toggled on mobile */}
-        <AnimatePresence initial={false}>
-          {(expanded) && (
-            <motion.p
-              key="desc"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="font-body text-mist-grey text-sm leading-relaxed md:hidden overflow-hidden"
-            >
-              {m.description}
-            </motion.p>
-          )}
-        </AnimatePresence>
-        {/* Always visible on md+ */}
-        <p className="hidden md:block font-body text-mist-grey text-sm leading-relaxed">
-          {m.description}
-        </p>
-
-        {/* Mobile expand hint */}
-        <motion.span
-          animate={{ rotate: expanded ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
-          className="mt-4 md:hidden"
-          aria-hidden="true"
-        >
-          <ChevronDown className={`w-4 h-4 ${m.iconColor} opacity-60`} />
-        </motion.span>
+        <div>
+          <h3 className="font-heading text-base font-semibold text-deep-atlantic leading-tight mb-0.5">
+            {m.title}
+          </h3>
+          <p className="font-body text-mist-grey text-xs tracking-wide mb-1">{m.tagline}</p>
+          <p className="font-body text-mist-grey text-xs leading-relaxed hidden sm:block">{m.description}</p>
+        </div>
       </div>
     </motion.div>
   );
@@ -267,7 +220,7 @@ export default function CruiseForTwo() {
               Every Milestone
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4">
             {milestones.map((m, i) =>
             <MilestoneCard key={m.title} milestone={m} index={i} />
             )}

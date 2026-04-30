@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/booking";
 
 const occasions = [
   { emoji: "🎂", title: "Birthday Celebration", description: "Make it legendary. Hot tub, bay views, and your whole crew." },
@@ -32,8 +32,6 @@ export default function PerfectForEveryOccasion() {
             >
               <a
                 href={FAREHARBOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={`Book for ${o.title} via FareHarbor`}
                 className="group flex flex-col gap-4 glass-card rounded-2xl p-7 hover:border-sky-horizon/60 hover:shadow-lg active:scale-95 transition-all duration-200 focus-ring h-full"
               >

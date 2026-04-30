@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-const FAREHARBOR_URL = "https://fareharbor.com/embeds/book/seaspacruises/";
+const FAREHARBOR_URL = "/booking";
 
 export default function FareHarborBookingCTA({
   headline = "Ready to Set Sail?",

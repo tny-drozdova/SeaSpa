@@ -1,7 +1,7 @@
 import { Heart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-const FAREHARBOR_URL = "/404";
+const FAREHARBOR_URL = "/booking";
 
 export default function GiveThemAMoment() {
   return (
